@@ -8,6 +8,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { UniversityListComponent } from './university/university-list/university-list.component';
 import { CollegeListComponent } from './college/college-list/college-list.component';
 import { CollegeNewComponent } from './college/college-new/college-new.component';
+import { UniversityNewComponent } from './university/university-new/university-new.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { CollegeNewComponent } from './college/college-new/college-new.component
     DashboardComponent,
     UniversityListComponent,
     CollegeListComponent,
-    CollegeNewComponent
+    CollegeNewComponent,
+    UniversityNewComponent
   ],
   imports: [
     BrowserModule,

@@ -1,16 +1,23 @@
 
 
-<h2>Universities List</h2>
-<ul class="university">
-  <li *ngFor="let university of universities"
-  [class.selected]="university === selectedUniversity"
-  (click)="onSelect(university)">
+<div class="university_list_container">
+  <div>
+      <h2>Universities List</h2>
 
-    <span class="badge">{{university.id}}</span> {{university.name}}
+      <!---<a routerLink="/newUniversity">Add New University </a>-->
+      <button class="btn" title="+New University">+New</button>
+    </div>
+      <ul class="university">
+          <li *ngFor="let university of universities"
+          [class.selected]="university === selectedUniversity"
+          (click)="onSelect(university)">
 
-  <button class="delete" title="delete university"
-  (click)="delete(university)">x</button>
-  </li>
-</ul>
+                <span class="badge">{{university.id}}</span> {{university.name}}
 
-<a routerLink="/newUniversity">Add New University </a>
+                <button class="delete" title="delete university"
+                (click)="delete(university)">x</button>
+          </li>
+      </ul>
+
+      <!---<a routerLink="/newUniversity">Add New University </a>-->
+</div>

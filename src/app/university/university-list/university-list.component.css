@@ -16,11 +16,13 @@
     background-color: #EEE;
     margin: .5em;
     padding: .3em 0;
-    height: 1.6em;
+    height: 2.5em;
     border-radius: 4px;
+    min-width: 18em;
+    display: inline-block;
   }
 
-  .university li.selected:hover {
+  .university li .selected:hover {
     background-color: #BBD8DC !important;
     color: white;
   }
@@ -45,15 +47,17 @@
     position: relative;
     left: -1px;
     top: -4px;
-    height: 1.8em;
+    height: 3em;
     min-width: 16px;
     text-align: right;
     margin-right: .8em;
     border-radius: 4px 0 0 4px;
+    display: inline-block;
+
   }
 
   .delete {
-   /* position: relative;
+    /*position: relative;
     left: 194px;
     top: -32px;
     background-color: gray !important;
@@ -65,4 +69,30 @@
     padding:5px 10px;
     border-radius:4px;
     cursor: pointer;
+    float: right;
+   
   }
+
+ .university_list_container
+ {
+   margin: auto;
+   width:900px;
+ }
+
+ .university_list_container>div>h2
+ {
+   padding-left: 10px;
+   display: inline-block;
+ }
+
+ .university_list_container>div>button{
+        background-color:rgb(91, 54, 224);
+        border:none;
+        padding:5px 10px;
+        border-radius:4px;
+        cursor: pointer;
+        color: white;
+        margin:0 0 5px 10px;
+        font-weight: bold;
+        
+ }

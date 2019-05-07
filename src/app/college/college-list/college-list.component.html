@@ -1,0 +1,14 @@
+<h2>College List</h2>
+<ul class="university">
+  <li *ngFor="let college of colleges"
+  [class.selected]="college === selectedCollege"
+  (click)="onSelect(college)">
+
+    <span class="badge">{{college.id}}</span> {{college.name}}
+
+  <button class="delete" title="delete university"
+  (click)="delete(college)">x</button>
+  </li>
+</ul>
+
+<button class="btn btn-danger" routerLink="/newCollege">Add New College </button>

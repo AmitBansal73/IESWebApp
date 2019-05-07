@@ -1,9 +1,29 @@
-<h3>Top Universities</h3>
-<div class="grid grid-pad">
-  <a *ngFor="let univ of universities" class="col-1-4"
- >
-    <div class="module univ">
-      <h4>{{univ.name}}</h4>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-1 hidden-xs"></div>
+    <div class="col-sm-10 col-xs-12">
+      <h3>Top Universities</h3>
+      <div class="grid grid-pad">
+        <a *ngFor="let univ of universities" class="col-1-4">
+          <div class="module univ">
+            <h4>{{univ.name}}</h4>
+          </div>
+        </a>
+      </div>
     </div>
-  </a>
+
+    <div class="col-sm-1 hidden-xs"></div>
+  </div>
+  <div class="row">
+      <div class="col-sm-1 hidden-xs"></div>
+      <div class="col-sm-10 col-xs-12">
+        <div  class="ChartCard">
+    <app-student-count-chart ></app-student-count-chart>
+  </div>
+  </div>
+
+  <div class="col-sm-1 hidden-xs"></div>
+  </div>
+
 </div>

@@ -1,0 +1,20 @@
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-xs-1"></div>
+    <div class="col-xs-10">
+        <p>
+           Available Subjects
+          </p>
+      <input type="text" placeholder="University"/><input type="text" placeholder="College">
+
+      <ul>
+        <li *ngFor="let subject of subjects" >
+            <span class="badge">{{subject.id}}</span> {{subject.name}}
+        </li>
+      </ul>
+
+    </div>
+    <div class="col-xs-1"></div>
+</div>
+</div>

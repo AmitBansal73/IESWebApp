@@ -1,0 +1,17 @@
+<p>
+  stream works!
+</p>
+
+<div class="conatiner-fluid">
+  <div class=col-xs-1></div>
+  <div class=col-xs-10>
+    <input type="text" placeholder="University"> <input type="text" placeholder="Stream">
+
+    <ul>
+        <li *ngFor="let stream of streams" >
+           <span class="badge">{{stream.id}}</span> {{stream.name}}
+        </li>
+      </ul>
+  </div>
+  <div class=col-xs-1></div>
+</div>

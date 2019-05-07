@@ -4,6 +4,8 @@ import {University} from '../classes/university'
 
 import {UniversityService} from '../services/university.service'
 
+import {StudentCountChartComponent} from '../charts/student-count-chart/student-count-chart.component'
+
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',

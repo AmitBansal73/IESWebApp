@@ -19,6 +19,8 @@ import { PaperNewComponent } from './papers/paper-new/paper-new.component';
 import { QuestionListComponent } from './question/question-list/question-list.component';
 import { QuestionTextComponent } from './question/question-text/question-text.component';
 import { QuestionNewComponent } from './question/question-new/question-new.component';
+import { StreamNewComponent } from './stream/stream-new/stream-new.component';
+import { SubjectNewComponent } from './subject/subject-new/subject-new.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +37,9 @@ import { QuestionNewComponent } from './question/question-new/question-new.compo
     PaperNewComponent,
     QuestionListComponent,
     QuestionTextComponent,
-    QuestionNewComponent
+    QuestionNewComponent,
+    StreamNewComponent,
+    SubjectNewComponent
    
   ],
   imports: [

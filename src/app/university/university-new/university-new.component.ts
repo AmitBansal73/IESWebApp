@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-university-new',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UniversityNewComponent implements OnInit {
 
-  constructor() { }
+  constructor(private location: Location) { }
 
   ngOnInit() {
+  }
+
+  Submit():void{
+    this.location.back();
   }
 
 }

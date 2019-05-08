@@ -1,10 +1,42 @@
-<h3>
-  question-list For
-</h3>
+<div class="heading">
 <h4>Thermodynamics 2018</h4>
 <h5>College of Technology, GB Pant University</h5>
-<div class="question"> {{_question.question}}</div>
 
-<div class="answer">{{_question.answer}}</div>
+</div>
 
-<button type="button" class="btn btn-sm" >next</button>
+ <div class="right">
+    <button class="btn btn-primary" type="button" routerLink="/newQuestion">New Question</button>
+
+ </div>
+
+<div class="question-container">
+ 
+<div class="accordion" id="accordionExample">
+  <div class="card" *ngFor="let question of questions; index as i;">
+    <div class="card-header" attr.id="heading{{question.id}}}">
+      <h2 class="mb-0">
+       
+          <div class="row" class="Qtext">
+            <div class="col-xs-2"> Question: {{i+1}} </div>
+            <div class="col-xs-10" >
+               
+              <ng-katex-paragraph [paragraph]="question.question" ></ng-katex-paragraph>
+
+              <button class="btn btn-link" type="button" data-toggle="collapse" attr.data-target="#collapse{{question.id}}"
+              aria-expanded="true" aria-controls="collapseOne"> Show Answer
+            </button>
+            </div>
+          </div>
+       
+      </h2>
+    </div>
+
+    <div attr.id="collapse{{question.id}}" class="collapse" attr.aria-labelledby="heading{{question.id}}" data-parent="#accordionExample">
+      <div class="card-body">
+        <ng-katex-paragraph [paragraph]="question.answer"></ng-katex-paragraph>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>

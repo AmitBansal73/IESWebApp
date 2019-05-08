@@ -11,6 +11,7 @@ import {StreamComponent} from './stream/stream/stream.component';
 import {SubjectComponent} from './subject/subject/subject.component';
 import {PaperComponent} from './papers/paper/paper.component'
 import {QuestionListComponent} from './question/question-list/question-list.component'
+import {QuestionNewComponent} from './question/question-new/question-new.component'
 
 const routes: Routes = [
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
@@ -22,7 +23,9 @@ const routes: Routes = [
   { path: 'stream', component: StreamComponent},
   { path: 'subject', component: SubjectComponent},
   { path: 'paper', component: PaperComponent},
-  { path: 'ShowQuestions', component: QuestionListComponent}
+  { path: 'ShowQuestions', component: QuestionListComponent},
+  { path: 'newQuestion', component: QuestionNewComponent}
+  
 ];
 
 

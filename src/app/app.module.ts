@@ -1,7 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule }    from '@angular/common/http';
-import {ChartModule} from 'angular-highcharts'
+import {ChartModule} from 'angular-highcharts';
+import { KatexModule } from 'ng-katex';
 
 import { AppComponent } from './app.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
@@ -16,6 +17,8 @@ import { StreamComponent } from './stream/stream/stream.component';
 import { PaperComponent } from './papers/paper/paper.component';
 import { PaperNewComponent } from './papers/paper-new/paper-new.component';
 import { QuestionListComponent } from './question/question-list/question-list.component';
+import { QuestionTextComponent } from './question/question-text/question-text.component';
+import { QuestionNewComponent } from './question/question-new/question-new.component';
 
 @NgModule({
   declarations: [
@@ -30,13 +33,17 @@ import { QuestionListComponent } from './question/question-list/question-list.co
     StreamComponent,
     PaperComponent,
     PaperNewComponent,
-    QuestionListComponent
+    QuestionListComponent,
+    QuestionTextComponent,
+    QuestionNewComponent
+   
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     ChartModule,
-    AppRoutingModule
+    AppRoutingModule,
+    KatexModule
   ],
   providers: [],
   bootstrap: [AppComponent]

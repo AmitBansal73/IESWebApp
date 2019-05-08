@@ -3,12 +3,13 @@
   <div class="row">
     <div class="col-xs-1"></div>
     <div class="col-xs-10">
-        <p>
+        <h3>
            Available Subjects
-          </p>
-      <input type="text" placeholder="University"/><input type="text" placeholder="College">
-
-      <ul>
+        </h3>
+          <div class="search-bar">
+     <div class="container"> <input type="text" placeholder="University"/><input type="text" placeholder="College"></div>
+            </div>
+      <ul class="subject">
         <li *ngFor="let subject of subjects" >
             <span class="badge">{{subject.id}}</span> {{subject.name}}
         </li>

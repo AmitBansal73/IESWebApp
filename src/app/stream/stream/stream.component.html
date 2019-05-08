@@ -2,14 +2,15 @@
   stream works!
 </p>
 
-<div class="conatiner-fluid">
+<div class="  stream_list_container">
   <div class=col-xs-1></div>
   <div class=col-xs-10>
-    <input type="text" placeholder="University"> <input type="text" placeholder="Stream">
-
-    <ul>
+    <div class="search-bar">
+       <div class="container"> <input type="text" placeholder="University"> <input type="text" placeholder="Stream"></div>
+    </div>
+    <ul class="stream">
         <li *ngFor="let stream of streams" >
-           <span class="badge">{{stream.id}}</span> {{stream.name}}
+           <span class="badge">{{stream.id}}</span> {{stream.name}}, <span class="tab">Running in 10 Colleges</span>, <span class="tab">350 Students Enrolled</span>
         </li>
       </ul>
   </div>

@@ -1,3 +1,31 @@
-<p>
-  paper works!
-</p>
+
+<div class="container-fluid">
+    <div class="row">
+        
+      <div class="col-md-1"></div>
+      <div class="col-md-5">
+          <p>
+             Available Papers 
+            </p>
+            
+        <input type="text" placeholder="University"/><input type="text" placeholder="College">
+  
+        <ul>
+          <li *ngFor="let paper of papers" >
+              <span class="badge">{{paper.id}}</span> {{paper.year}}, {{paper.subject}} <br/>
+              {{paper.college}}, {{paper.university}}
+              <button type="button" class="btn btn-sm" routerLink="/ShowQuestions" >Questions</button>
+          </li>
+        </ul>
+  
+      </div>
+      <div class="col-md-6">
+          <button type="button" class="btn stn-success" (click)="NewPaper()"  >New Paper</button>
+        <div *ngIf="newPaper">
+            <app-paper-new  (added)="onAdd($event)" ></app-paper-new>
+        </div>
+        
+      </div>
+  </div>
+  </div>
+  

@@ -10,6 +10,7 @@ import {CollegeNewComponent} from './college/college-new/college-new.component';
 import {StreamComponent} from './stream/stream/stream.component';
 import {SubjectComponent} from './subject/subject/subject.component';
 import {PaperComponent} from './papers/paper/paper.component'
+import {QuestionListComponent} from './question/question-list/question-list.component'
 
 const routes: Routes = [
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
@@ -20,8 +21,11 @@ const routes: Routes = [
   { path: 'newCollege', component: CollegeNewComponent},
   { path: 'stream', component: StreamComponent},
   { path: 'subject', component: SubjectComponent},
-  { path: 'paper', component: PaperComponent}
+  { path: 'paper', component: PaperComponent},
+  { path: 'ShowQuestions', component: QuestionListComponent}
 ];
+
+
 
 @NgModule({
   declarations: [],

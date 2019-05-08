@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import {Stream} from '../../classes/stream'
+import {Stream} from '../../model/stream'
 
 @Component({
   selector: 'app-stream',

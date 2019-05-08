@@ -14,6 +14,8 @@ import { StudentCountChartComponent } from './charts/student-count-chart/student
 import { SubjectComponent } from './subject/subject/subject.component';
 import { StreamComponent } from './stream/stream/stream.component';
 import { PaperComponent } from './papers/paper/paper.component';
+import { PaperNewComponent } from './papers/paper-new/paper-new.component';
+import { QuestionListComponent } from './question/question-list/question-list.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,9 @@ import { PaperComponent } from './papers/paper/paper.component';
     StudentCountChartComponent,
     SubjectComponent,
     StreamComponent,
-    PaperComponent
+    PaperComponent,
+    PaperNewComponent,
+    QuestionListComponent
   ],
   imports: [
     BrowserModule,

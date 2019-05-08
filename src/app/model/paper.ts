@@ -5,6 +5,5 @@ export class Paper{
     subject: string;
     college: string;
     university: string;
-    difficulty: string;
-
+  
 }

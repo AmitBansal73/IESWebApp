@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import {Subject} from '../../classes/subject'
+import {Subject} from '../../model/subject'
 
 @Component({
   selector: 'app-subject',

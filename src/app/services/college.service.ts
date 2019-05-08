@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 
-import{ College } from '../classes/college';
+import{ College } from '../model/college';
 import { Observable, of } from 'rxjs';
 
 const  httpOptions = {

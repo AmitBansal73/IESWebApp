@@ -1,4 +1,48 @@
 .NewForm{
-    width: 500px;
+    width: 35em;
     margin: auto;
+}
+
+.NewForm>h3
+{
+    margin:5px 0 5px 5px;
+    position: relative;
+}
+
+.form-group
+{
+    border:2px solid green;
+    padding: 0em 2em 0 2em;
+    border-radius: 10px;
+    width: 28em;
+ 
+}
+
+.form-group>label 
+{
+    margin-top:2em;
+    margin-bottom: .7em;
+    margin-right: auto;
+    
+}
+
+.form-group>button
+{
+    margin: 2em 0 2em 0;
+}
+
+.profilepic
+{
+    border:2px solid green;
+    height:138px;
+    width: 138px;
+    margin-bottom: -29px;
+    background-color: white;
+ 
+    padding:0;
+    border-radius: 55px;
+    border-bottom: 3px solid white;
+    z-index: 300;
+    display: inline-block;
+   
 }

@@ -5,17 +5,17 @@
       <h2>Universities List</h2>
 
       <!---<a routerLink="/newUniversity">Add New University </a>-->
-      <button class="btn" title="+New University">+New</button>
+      <button class="btn" title="+New University" routerLink="/newUniversity">+New</button>
     </div>
       <ul class="university">
           <li *ngFor="let university of universities"
           [class.selected]="university === selectedUniversity"
           (click)="onSelect(university)">
 
-                <span class="badge">{{university.id}}</span> {{university.name}}
+                <span class="badge">{{university.id}}</span> {{university.name}} <span class="tab"> 10 Colleges affiliated to it.</span> ,<span class="tab">1200 Students currently using IESMaster App</span>
 
-                <button class="delete" title="delete university"
-                (click)="delete(university)">x</button>
+                <!---<button class="delete" title="delete university"
+                (click)="delete(university)">x</button>-->
           </li>
       </ul>
 

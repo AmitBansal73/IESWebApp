@@ -18,7 +18,7 @@
     padding: .3em 0;
     height: 2.5em;
     border-radius: 4px;
-    min-width: 18em;
+    min-width: 50em;
     display: inline-block;
   }
 
@@ -76,13 +76,19 @@
  .university_list_container
  {
    margin: auto;
-   width:900px;
+   width:1000px;
+ }
+
+ .university_list_container>div
+ {
+    width:50em;  
  }
 
  .university_list_container>div>h2
  {
    padding-left: 10px;
    display: inline-block;
+   padding-top:20px;
  }
 
  .university_list_container>div>button{
@@ -92,7 +98,17 @@
         border-radius:4px;
         cursor: pointer;
         color: white;
-        margin:0 0 5px 10px;
+        margin:1.5em 0 0 10px;
         font-weight: bold;
-        
+        float: right;
  }
+
+ .tab
+  {
+    background-color: #c4cbff;
+    display: inline-block;
+    padding:1px 2px 1px 2px;
+    border:1px outset silver;
+    border-radius: 5px;
+    margin:0 0 0 5px;
+  }

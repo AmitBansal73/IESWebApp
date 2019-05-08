@@ -1,14 +1,24 @@
-<h2>College List</h2>
-<ul class="university">
-  <li *ngFor="let college of colleges"
-  [class.selected]="college === selectedCollege"
-  (click)="onSelect(college)">
 
-    <span class="badge">{{college.id}}</span> {{college.name}}
+<div class="college-list-container">
 
-  <button class="delete" title="delete university"
-  (click)="delete(college)">x</button>
-  </li>
-</ul>
+    <div>
+      <h2>College List</h2>
+      <button class="btn btn-danger" routerLink="/newCollege"> +New College </button>
+    </div>
+      <ul class="university ">
+        <li *ngFor="let college of colleges"
+        [class.selected]="college === selectedCollege"
+        (click)="onSelect(college)">
 
-<button class="btn btn-danger" routerLink="/newCollege">Add New College </button>
+            <span class="badge">{{college.id}}</span> {{college.name}},<span class="tab"> Total 7 Streams</span> ,<span class="tab">Total 120 Students</span>
+
+           <!--- <button class="delete" title="delete university"
+            (click)="delete(college)">x</button>-->
+        </li>   
+      </ul>
+
+      <!---<button class="btn btn-danger" routerLink="/newCollege">Add New College </button>-->
+
+      </div>
+
+      

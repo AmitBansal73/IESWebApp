@@ -2,7 +2,7 @@
     margin: 0 0 2em 0;
     list-style-type: none;
     padding: 0;
-    width: 40em;
+    width: 50em;
   }
   .university li {
     cursor: pointer;
@@ -11,10 +11,24 @@
     background-color: #EEE;
     margin: .5em;
     padding: .3em 0;
-    height: 2em;
+    height: 2.5em;
     border-radius: 4px;
+    width: 50em !important;
+    
   }
 
+  .college-list-container
+  {
+    margin:auto;
+    width:1000px;
+    padding-top:20px;
+  }
+
+  .college-list-container>div
+  {
+    width:50em;
+    
+  }
   .university li.selected:hover {
     background-color: #BBD8DC !important;
     color: white;
@@ -42,7 +56,47 @@
     position: relative;
     left: -1px;
     top: -4px;
-    height: 2em;
+    height: 3em;
     margin-right: .8em;
     border-radius: 4px 0 0 4px;
+  }
+
+  .delete
+  {
+    
+    background-color: gray ;
+    border:none;
+    padding:5px 10px;
+    border-radius:4px;
+    cursor: pointer;
+    float: right;
+  }
+
+  .college-list-container>div>button
+  {
+    background-color:rgb(91, 54, 224);
+    border:none;
+    padding:5px 10px;
+    border-radius:4px;
+    cursor: pointer;
+    color: white;
+    margin:0 0 5px 10px;
+    font-weight: bold;
+    float: right;
+    margin-top:5px;
+  }
+  .college-list-container>div>h2
+  {
+    display: inline-block;
+   
+  }
+
+  .tab
+  {
+    background-color: #c4cbff;
+    display: inline-block;
+    padding:1px 2px 1px 2px;
+    border:1px outset silver;
+    border-radius: 5px;
+    margin:0 0 0 5px;
   }

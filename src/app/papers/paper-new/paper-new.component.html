@@ -7,23 +7,55 @@
   
    <div class="form-group">
      <label  for="universityName">Select University</label>
-     <input id="universityName" class="form-control" placeholder="University Name"/>
+     <!-- <input id="universityName" class="form-control" placeholder="University Name"/>-->
+
+     <ng-select [items]="universities"
+                   bindLabel="name"
+                   placeholder="Select University"
+                   [(ngModel)]="selectedUniversity">
+        </ng-select>
+
    </div>
    <div class="form-group">
-      <label for="CityName">Select College</label>
-    <input id="CityName" class="form-control" placeholder="College"/>
+    <label for="college">Select College</label>
+  
+    <!--  <input id="CityName" class="form-control" placeholder="College"/>-->
+    <ng-select [items]="colleges"
+    id="college"
+    bindLabel="name"
+    placeholder="Select College"
+    [(ngModel)]="selectedCollege">
+</ng-select>
+
   </div>
   <div class="form-group">
-      <label for="CityName">Select Stream</label>
-    <input id="CityName" class="form-control" placeholder="Stream"/>
+
+      <label for="Stream">Select Stream</label>
+      <!-- <input id="Stream" class="form-control" placeholder="Stream"/>-->
+      <ng-select [items]="streams"
+      id="stream"
+      bindLabel="name"
+      placeholder="Select Stream"
+      [(ngModel)]="selectedStream">
+     </ng-select>
+
+
   </div>
   <div class="form-group">
-      <label for="CityName">Select Semester</label>
-    <input id="CityName" class="form-control" placeholder="Semester"/>
+      <label for="semester">Select Semester</label>
+   
+      <!--  <input id="CityName" class="form-control" placeholder="Semester"/>
+      -->
+      <ng-select [items]="semesters"
+      id="semester"
+      bindLabel="semester"
+      placeholder="Select Semester"
+      ></ng-select>
+      
   </div>
   <div class="form-group">
-      <label for="CityName">Write Year here</label>
-    <input id="CityName" class="form-control" placeholder="Year"/>
+      <label for="YearName">Write Year here</label>
+    <input id="YearName" class="form-control" placeholder="Year"/>
   </div>
   <button type="submit" class="btn btn-primary space" (click)="Cancel()" >Cancel</button>
   <button type="submit" class="btn btn-primary" (click)="Submit()" >Submit</button>

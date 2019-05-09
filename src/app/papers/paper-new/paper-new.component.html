@@ -18,10 +18,11 @@
 
    </div>
    <div class="form-group">
-      <label for="CityName">Select College</label>
+      <label for="college">Select College</label>
   
     <!--  <input id="CityName" class="form-control" placeholder="College"/>-->
     <ng-select [items]="colleges"
+    id="college"
     bindLabel="name"
     placeholder="Select College"
     [(ngModel)]="selectedCollege">
@@ -29,12 +30,28 @@
 
   </div>
   <div class="form-group">
-      <label for="CityName">Select Stream</label>
-    <input id="CityName" class="form-control" placeholder="Stream"/>
+      <label for="Stream">Select Stream</label>
+   <!-- <input id="Stream" class="form-control" placeholder="Stream"/>-->
+   <ng-select [items]="streams"
+   id="stream"
+   bindLabel="name"
+   placeholder="Select Stream"
+   [(ngModel)]="selectedStream">
+  </ng-select>
+
   </div>
   <div class="form-group">
-      <label for="CityName">Select Semester</label>
-    <input id="CityName" class="form-control" placeholder="Semester"/>
+      <label for="semester">Select Semester</label>
+   
+<!--  <input id="CityName" class="form-control" placeholder="Semester"/>
+-->
+<ng-select [items]="semesters"
+id="semester"
+bindLabel="semester"
+placeholder="Select Semester"
+></ng-select>
+
+
   </div>
   <div class="form-group">
       <label for="CityName">Write Year here</label>

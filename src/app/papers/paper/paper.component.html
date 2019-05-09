@@ -8,8 +8,7 @@
              Available Papers 
           </h3>
             <div class="search-bar">
-      <div class="container">  <input type="text" placeholder="University"/><input type="text" placeholder="College"></div>
-  </div>
+      <div class="container">  <input type="text" (input)="search(searchText)" [(ngModel)]="searchText" placeholder="Subject"/>
         <ul class="paper">
           <li *ngFor="let paper of papers" >
               <span class="badge">{{paper.id}}</span> {{paper.year}}, {{paper.subject}} 

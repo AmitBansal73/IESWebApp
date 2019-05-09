@@ -10,6 +10,9 @@ import {University} from '../../model/university'
 import {CollegeService} from '../../services/college.service'
 import {College} from '../../model/college'
 
+import {STREAM} from '../../data/mock-stream'
+import {Stream} from '../../model/stream'
+
 @Component({
   selector: 'app-paper-new',
   templateUrl: './paper-new.component.html',
@@ -24,6 +27,14 @@ export class PaperNewComponent implements OnInit {
 
   colleges : College[];
   selectedCollege:any;
+  selectedCollegeId: number;
+
+  streams : Stream[] = STREAM;
+  selectedStream:any;
+  selectedStreamId: number;
+
+  semesters : string[] = ['1st', '2nd', '3rd', '4th', '5th','6th','7th','8th'];
+  selectedSemester:string;
 
   constructor(
     private universityService: UniversityService,

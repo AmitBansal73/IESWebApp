@@ -7,11 +7,26 @@
   
    <div class="form-group">
      <label  for="universityName">Select University</label>
-     <input id="universityName" class="form-control" placeholder="University Name"/>
+    <!-- <input id="universityName" class="form-control" placeholder="University Name"/>-->
+
+     <ng-select [items]="universities"
+                   bindLabel="name"
+                   placeholder="Select University"
+                   [(ngModel)]="selectedUniversity">
+        </ng-select>
+
+
    </div>
    <div class="form-group">
       <label for="CityName">Select College</label>
-    <input id="CityName" class="form-control" placeholder="College"/>
+  
+    <!--  <input id="CityName" class="form-control" placeholder="College"/>-->
+    <ng-select [items]="colleges"
+    bindLabel="name"
+    placeholder="Select College"
+    [(ngModel)]="selectedCollege">
+</ng-select>
+
   </div>
   <div class="form-group">
       <label for="CityName">Select Stream</label>

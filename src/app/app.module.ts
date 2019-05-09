@@ -3,6 +3,9 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule }    from '@angular/common/http';
 import {ChartModule} from 'angular-highcharts';
 import { KatexModule } from 'ng-katex';
+import { FormsModule} from '@angular/forms';
+import { NgSelectModule } from '@ng-select/ng-select';
+
 
 import { AppComponent } from './app.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
@@ -47,7 +50,10 @@ import { SubjectNewComponent } from './subject/subject-new/subject-new.component
     HttpClientModule,
     ChartModule,
     AppRoutingModule,
-    KatexModule
+    KatexModule,
+    FormsModule,
+    NgSelectModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]

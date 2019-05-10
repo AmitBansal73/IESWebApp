@@ -3,15 +3,15 @@
     margin: auto;
 }
 
-.NewForm>h3
+.NewForm>h4
 {
-    margin:5px 0 5px 5px;
+    margin:2em 0 1em .5em;
     position: relative;
 }
 
 .form-group
 {
-    border:2px solid green;
+    border:2px inset rgb(97, 124, 211);
     padding: 0em 2em 0 2em;
     border-radius: 10px;
     width: 28em;
@@ -28,21 +28,6 @@
 
 .form-group>button
 {
-    margin: 2em 0 2em 0;
+    margin: 2em .5em 2em 0;
 }
 
-.profilepic
-{
-    border:2px solid green;
-    height:138px;
-    width: 138px;
-    margin-bottom: -29px;
-    background-color: white;
-  
-    padding:0;
-    border-radius: 55px;
-    border-bottom: 3px solid white;
-    z-index: 300;
-    display: inline-block;
-   
-}

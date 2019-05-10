@@ -18,4 +18,7 @@ export class CollegeNewComponent implements OnInit {
     this.location.back();
   }
 
+  Cancel():void{
+    this.location.back();
+  }
 }

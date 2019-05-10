@@ -24,6 +24,7 @@ import { QuestionTextComponent } from './question/question-text/question-text.co
 import { QuestionNewComponent } from './question/question-new/question-new.component';
 import { StreamNewComponent } from './stream/stream-new/stream-new.component';
 import { SubjectNewComponent } from './subject/subject-new/subject-new.component';
+import { SubjectDetailsComponent } from './subject/subject-details/subject-details.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { SubjectNewComponent } from './subject/subject-new/subject-new.component
     QuestionTextComponent,
     QuestionNewComponent,
     StreamNewComponent,
-    SubjectNewComponent
+    SubjectNewComponent,
+    SubjectDetailsComponent
    
   ],
   imports: [

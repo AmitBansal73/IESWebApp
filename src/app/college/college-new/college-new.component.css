@@ -1,5 +1,29 @@
 .NewForm{
     width: 500px;
     margin: auto;
-    margin-top: 100px;
+    margin-top: 10px;
+}
+
+h4
+{
+    margin-bottom: .5em;
+}
+
+.form-style
+{
+    border:2px inset rgb(97, 124, 211);
+    padding: 2em;
+    border-radius: 10px;
+    width: 30em;
+    margin-bottom: 10px;
+}
+
+button
+{
+    margin-right: .5em;
+}
+
+#collegestream
+{
+    margin-bottom: 1em;
 }

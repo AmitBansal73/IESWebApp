@@ -32,14 +32,22 @@
   </div>
 -->
 
-<div class="paper-list-container">
-    <div class="available-paper-panel">
-        <h3>
-            Available Papers 
-           <button type="button" class="btn stn-success new-btn" (click)="NewPaper()"  >New Paper</button>
-           <div class="clearfix"></div>
-        </h3>
+<div class="container-fluid">
+  <div class="row">
 
+    <div class="col-sm-2"></div>
+    <div class="col-sm-8">
+        <div class="row">
+          <div class="col-md-9">
+            <h4>
+                Available Papers 
+            </h4>
+          </div>
+          <div class="col-md-2">
+              <button type="button" class="btn stn-success new-btn" routerLink="/newPaper"  >New Paper</button>
+          </div>
+          <div class="col-md-1"></div>
+        </div>
         <div class="search-bar">
           <div class="container">  <input type="text" placeholder="University"/><input type="text" placeholder="College"></div>
         </div>
@@ -53,11 +61,15 @@
         </ul>
 
     </div>
+    <div class="col-sm-2">
 
-    <div *ngIf="newPaper" class="new-paper-panel" >
+        <div *ngIf="newPaper" class="new-paper-panel" >
 
-      <app-paper-new  (added)="onAdd($event)" ></app-paper-new>
+            <app-paper-new  (added)="onAdd($event)" ></app-paper-new>
+      
+        </div>
+    </div>
 
-  </div>
- 
+
+</div>
 </div>

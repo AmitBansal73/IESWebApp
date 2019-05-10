@@ -17,4 +17,8 @@ export class UniversityNewComponent implements OnInit {
     this.location.back();
   }
 
+  Cancel():void{
+    this.location.back();
+  }
+
 }

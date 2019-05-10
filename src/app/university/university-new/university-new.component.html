@@ -1,19 +1,20 @@
 
  <div  class="NewForm" >
 
-    <h3>Add College Data</h3>
+    <h4>Add University Data</h4>
  <!--- <div  class="NewForm">-->
-  <div class="profilepic"></div> 
+  
   <form>
   
    <div class="form-group" >
      <label  for="universityName">Enter University Name</label>
-     <input id="universityName" class="form-control" placeholder="University Name"/>
+     <input id="universityName" class="form-control" placeholder="What is Name of University.."/>
   
-      <label for="CityName">Enter University City</label>
-    <input id="CityName" class="form-control" placeholder="City"/>
+      <label for="CityName">Enter City</label>
+    <input id="CityName" class="form-control" placeholder="In which City University is..."/>
   
-  <button type="submit" class="btn btn-primary">Submit</button>
+  <button type="button" class="btn btn-primary"  (click)="Submit()">Submit</button>
+  <button type="button"  class="btn btn-danger"  (click)="Cancel()" >Cancel</button>
 </div>
   </form>
   </div>

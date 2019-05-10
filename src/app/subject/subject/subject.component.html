@@ -1,22 +1,30 @@
 
 
-<div class="container-fluid subject_list_container">
+<div class="container-fluid">
   <div class="row">
-    <div class="col-xs-1"></div>
-    <div class="col-xs-10">
-        <h4>
-           Available Subjects
-        </h4>
-          <div class="search-bar">
-             <input type="text" placeholder="University"/><input type="text" placeholder="College"></div>
-           
+    <div class="col-sm-2"></div>
+    <div class="col-sm-9">
+      <div class="row">
+        <div class="col-md-8">
+      <h4>
+        Available Subjects
+      </h4>
+      </div>
+      <div class="col-md-2">
+      <button class="btn btn-primary btn-sm" title="New Subject" routerLink="/newSubject">New Subject</button>
+    </div>
+    <div class="col-md-2"></div>
+    </div>
+      <div class="search-bar">
+        <input type="text" placeholder="University" /><input type="text" placeholder="College"></div>
+
       <ul class="subject">
-        <li *ngFor="let subject of subjects" >
-            <span class="badge">{{subject.id}}</span> {{subject.name}}
+        <li *ngFor="let subject of subjects">
+          <span class="badge">{{subject.id}}</span> {{subject.name}}   <a routerLink="/SubjectDetails" class="tab">   12 Topics</a> ,<span class="tab">42 Question Papers</span>
         </li>
       </ul>
 
     </div>
-    <div class="col-xs-1"></div>
-</div>
+    <div class="col-sm-1"></div>
+  </div>
 </div>

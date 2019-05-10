@@ -1,4 +1,6 @@
 import { Component, OnInit, EventEmitter, Input, Output } from '@angular/core';
+import { Location } from '@angular/common';
+
 
 import {BrowserModule} from '@angular/platform-browser';
 import {FormControl, FormGroup, ReactiveFormsModule, FormsModule} from '@angular/forms';
@@ -38,7 +40,8 @@ export class PaperNewComponent implements OnInit {
 
   constructor(
     private universityService: UniversityService,
-    private collegeService: CollegeService
+    private collegeService: CollegeService,
+    private location : Location
     ) { }
 
   ngOnInit() {
@@ -57,10 +60,10 @@ export class PaperNewComponent implements OnInit {
   }
 
   Submit():void{
-    this.added.emit(true);
+    this.location.back();
   }
 
   Cancel():void{
-    this.added.emit(true);
+   this.location.back();
   }
 }

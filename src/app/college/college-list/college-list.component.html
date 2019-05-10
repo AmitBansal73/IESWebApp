@@ -1,16 +1,26 @@
 
-<div class="college-list-container">
-
-    <div>
-      <h2>College List</h2>
-      <button class="btn btn-danger" routerLink="/newCollege"> +New College </button>
+<div class="container-fluid">
+  <div class="row">
+<div class="col-sm-2"></div>
+<div class="col-sm-8">
+    <div class="row">
+        <div class="col-md-10">
+      <h4>College List</h4>
     </div>
-      <ul class="university ">
+        
+    <div class="col-md-1">
+      <button class="btn btn-primary btn-sm" routerLink="/newCollege"> +New College </button>
+    </div>
+    </div>
+    <div class="search-bar">
+        <div class="container"> <input type="text" placeholder="University"> </div>
+     </div>
+      <ul class="college">
         <li *ngFor="let college of colleges"
         [class.selected]="college === selectedCollege"
         (click)="onSelect(college)">
 
-            <span class="badge">{{college.id}}</span> {{college.name}},<span class="tab"> Total 7 Streams</span> ,<span class="tab">Total 120 Students</span>
+            <span class="badge">{{college.id}}</span> {{college.name}},<a routerLink="/stream" class="tab"> Total 7 Streams</a> ,<span class="tab">Total 120 Students</span>
 
            <!--- <button class="delete" title="delete university"
             (click)="delete(college)">x</button>-->
@@ -18,7 +28,9 @@
       </ul>
 
       <!---<button class="btn btn-danger" routerLink="/newCollege">Add New College </button>-->
-
-      </div>
+    </div>
+    <div class="col-sm-2"></div>
+  </div>
+    </div>
 
       

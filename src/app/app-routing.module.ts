@@ -10,10 +10,13 @@ import {CollegeNewComponent} from './college/college-new/college-new.component';
 import {StreamComponent} from './stream/stream/stream.component';
 import {SubjectComponent} from './subject/subject/subject.component';
 import {PaperComponent} from './papers/paper/paper.component'
+import {PaperNewComponent} from './papers/paper-new/paper-new.component'
 import {QuestionListComponent} from './question/question-list/question-list.component'
 import {QuestionNewComponent} from './question/question-new/question-new.component'
 import {StreamNewComponent} from './stream/stream-new/stream-new.component'
 import {SubjectNewComponent} from './subject/subject-new/subject-new.component'
+
+import {SubjectDetailsComponent} from './subject/subject-details/subject-details.component'
 
 const routes: Routes = [
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
@@ -28,7 +31,10 @@ const routes: Routes = [
   { path: 'ShowQuestions', component: QuestionListComponent},
   { path: 'newQuestion', component: QuestionNewComponent},
   { path: 'newStream', component: StreamNewComponent},
-  { path: 'newSubject', component: SubjectNewComponent}
+  { path: 'newSubject', component: SubjectNewComponent},
+  { path: 'SubjectDetails', component: SubjectDetailsComponent},
+  { path:'newPaper', component:PaperNewComponent}
+  
   
 ];
 

@@ -1,7 +1,7 @@
 
  <div  class="NewForm" >
 
-    <h3>Add New Stream</h3>
+    <h4>Add New Stream</h4>
  <!--- <div  class="NewForm">-->
   <div ></div> 
   <form>
@@ -11,9 +11,10 @@
      <input id="StreamName" class="form-control" placeholder="Stream Name"/>
   
       <label for="Description">Enter Stream Description</label>
-    <input id="Description" class="form-control" placeholder="Description"/>
+    <textarea id="Description" class="form-control" placeholder="Tell us something about the Stream..."></textarea>
   
-  <button type="submit" class="btn btn-primary">Submit</button>
+  <button type="button" class="btn btn-primary" (click)="Submit()">Submit</button>
+  <button type="button" class="btn btn-danger" (click)="Cancel()">Cancel</button>
 </div>
   </form>
   </div>

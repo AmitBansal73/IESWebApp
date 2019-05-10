@@ -42,7 +42,7 @@
     font-size: small;
     color: white;
     padding: 0.8em 0.7em 0 0.7em;
-    background-color: #607D8B;
+    background-color: rgb(84, 71, 201);
     line-height: 1em;
     position: relative;
     left: -1px;
@@ -84,23 +84,28 @@
     width:50em;  
  }
 
- .university_list_container>div>h2
+ h4
  {
-   padding-left: 10px;
    display: inline-block;
    padding-top:20px;
+   margin-left: 0.7em;
  }
 
- .university_list_container>div>button{
+button{
         background-color:rgb(91, 54, 224);
         border:none;
         padding:5px 10px;
         border-radius:4px;
         cursor: pointer;
         color: white;
-        margin:1.5em 0 0 10px;
+        margin: 1.5em .5em 0 0;
         font-weight: bold;
         float: right;
+ }
+
+ a{
+   text-decoration: none;
+   color:black;
  }
 
  .tab

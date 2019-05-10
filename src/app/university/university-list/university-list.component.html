@@ -1,23 +1,37 @@
 
 
-<div class="university_list_container">
-  <div>
-      <h2>Universities List</h2>
+<div class="container-fluid ">
+  <div class="row">
+    <div class="col-xs-2 col-md-2" ></div>
 
-      <!---<a routerLink="/newUniversity">Add New University </a>-->
-      <button class="btn" title="+New University" routerLink="/newUniversity">+New</button>
+    <div class="xs-hidden col-md-8" >
+      
+      <div class="row">
+        <div class="col-md-10">
+          
+        <h4>Universities List</h4> 
+        </div>
+        
+        <div class="col-md-1">
+        <button class="btn btn-primary btn-sm" title="+New University" routerLink="/newUniversity">+New</button>
+        </div>
+      </div>
+        <ul class="university">
+            <li *ngFor="let university of universities"
+            [class.selected]="university === selectedUniversity"
+            (click)="onSelect(university)" class="col-md-6">
+  
+                  <span class="badge">{{university.id}}</span> {{university.name}} <a routerLink="/college" class="tab"> 10 Colleges affiliated to it.</a> ,<span class="tab">1200 Students Registered</span>
+  
+                  <!---<button class="delete" title="delete university"
+                  (click)="delete(university)">x</button>-->
+            </li>
+        </ul>
+    
+    
     </div>
-      <ul class="university">
-          <li *ngFor="let university of universities"
-          [class.selected]="university === selectedUniversity"
-          (click)="onSelect(university)">
 
-                <span class="badge">{{university.id}}</span> {{university.name}} <span class="tab"> 10 Colleges affiliated to it.</span> ,<span class="tab">1200 Students Registered</span>
-
-                <!---<button class="delete" title="delete university"
-                (click)="delete(university)">x</button>-->
-          </li>
-      </ul>
-
-      <!---<a routerLink="/newUniversity">Add New University </a>-->
+    <div class="col-xs-2 col-md-2" ></div>
+  </div>
+ 
 </div>

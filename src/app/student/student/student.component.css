@@ -72,3 +72,11 @@
      margin:0 0 0 5px;
    }
    
+   .search-bar
+{
+    width:40em;
+    background-color:rgb(84, 71, 201);
+    border-radius: 5px;
+    padding: 5px; 
+    margin-left: 1em;  
+}

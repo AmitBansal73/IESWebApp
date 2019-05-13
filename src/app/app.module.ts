@@ -25,6 +25,7 @@ import { QuestionNewComponent } from './question/question-new/question-new.compo
 import { StreamNewComponent } from './stream/stream-new/stream-new.component';
 import { SubjectNewComponent } from './subject/subject-new/subject-new.component';
 import { SubjectDetailsComponent } from './subject/subject-details/subject-details.component';
+import { StudentComponent } from './student/student/student.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import { SubjectDetailsComponent } from './subject/subject-details/subject-detai
     QuestionNewComponent,
     StreamNewComponent,
     SubjectNewComponent,
-    SubjectDetailsComponent
+    SubjectDetailsComponent,
+    StudentComponent
    
   ],
   imports: [

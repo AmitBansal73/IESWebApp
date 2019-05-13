@@ -1,7 +1,23 @@
-<p>
-  student works!
-</p>
+
+<div class="container-fluid">
+<div class="row">
+  <div class="col-md-2"></div>
+  <div class="col-md-8">
+    <div class="row">
+        
+<div class="col-md-7 space">
+  <h4>
+    Student Details
+  </h4>
+</div>
+<div class="col-md-1"></div>
+<div class="col-md-4"></div>
+</div>
 <ul >
   <li *ngFor="let student of students" >
-     <span class="badge">{{student.id}}</span> {{student.name}}
+     <span class="badge">{{student.id}}</span> {{student.name}}<span class="tab">Course:BTech</span> , <span class="tab">Branch:CSE</span> , <span class="tab">Year 2nd</span>
 </ul>
+</div>
+<div class="col-md-2"></div>
+</div>
+</div>

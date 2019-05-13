@@ -9,3 +9,15 @@
 {
     margin-right: 1em;
 }
+
+h4{
+    display: inline-block;
+    padding-top:20px;
+    margin-left: 0.7em;
+  }
+
+  .heading{
+      width:400px;
+      margin:auto;
+  }
+

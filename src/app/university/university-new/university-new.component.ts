@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
 
+import {UniversityService} from '../../services/university.service'
+import { University } from 'src/app/model/university';
+
 @Component({
   selector: 'app-university-new',
   templateUrl: './university-new.component.html',
@@ -8,13 +11,26 @@ import { Location } from '@angular/common';
 })
 export class UniversityNewComponent implements OnInit {
 
-  constructor(private location: Location) { }
+  university:University= {UnivID:0,name:""};
+
+  constructor(
+    private location: Location,
+    private universityService: UniversityService
+    ) { }
 
   ngOnInit() {
   }
 
   Submit():void{
-    this.location.back();
+    
+
+      this.universityService.addUniversity(this.university).subscribe(univ=>
+        {
+        this.location.back();
+        }
+      );
+
+   
   }
 
   Cancel():void{

@@ -1,4 +1,4 @@
 export class University {
-    id: number;
+  UnivID: number;
     name: string;
   }

@@ -7,6 +7,8 @@ import { Observable, of } from 'rxjs';
 
 import { catchError, map, tap } from 'rxjs/operators';
 
+import {CONSTANTS} from '../model/CONSTANTS';
+
 const  httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
 };
@@ -18,11 +20,15 @@ const  httpOptions = {
 
 export class UniversityService {
 
-  private UniversitysUrl = 'http://www.kevintech.in/IES-WebApi/'+ 'api/University/All';
+  private UniversitysUrl = CONSTANTS.API_URL+ 'api/university/All';
 
-  private addUrl = 'http://www.kevintech.in/IES-WebApi/'+ 'api/University/New';
+  private addUrl = CONSTANTS.API_URL+ 'api/university/New';
   
   encoded = encodeURI(this.UniversitysUrl);
+
+  university:University={ UnivID: 0,
+    Name: "",
+    CollegeCount:0};
 
   constructor(private http: HttpClient) { }
 
@@ -31,16 +37,19 @@ export class UniversityService {
 
     return of([
       {UnivID:1,
-        name:'CCS University'},
+        Name:'CCS University',
+        CollegeCount:0},
         {UnivID:2,
-        name: 'BR Ambedkar University'},
+        Name: 'BR Ambedkar University',
+        CollegeCount:0},
         {UnivID:3,
-          name: 'Banaras Hindu University'}
+          Name: 'Banaras Hindu University',
+          CollegeCount:0}
     ]);
   }
 
-  public getUniversities(): any {
-    return this.http.get<any>(this.UniversitysUrl);
+  public getUniversities(): Observable<University[]> {
+    return this.http.get<University[]>(this.UniversitysUrl);
 
    /* return of([
       {id:1,

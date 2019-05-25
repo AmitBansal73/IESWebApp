@@ -21,7 +21,11 @@ export class CollegeListComponent implements OnInit {
 
   getColleges():void{
     this.collegeService.getCollege()
-    .subscribe(_Colllege=> this.colleges = _Colllege)
+    .subscribe(_college=> {
+      
+      //console.log(JSON.stringify(_college));
+      
+      this.colleges = _college});
    
   }
 

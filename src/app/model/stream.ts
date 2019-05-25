@@ -1,5 +1,7 @@
 export class Stream{
-    id: number;
-    name: string;
-    description: string;
+    StreamID: number;
+    StreamName: string;
+    CollegeCount: number;
+    Description: string;
 }
+

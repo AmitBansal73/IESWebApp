@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import {Stream} from '../../model/stream'
+import {StreamService} from '../../services/stream.service'
 
 @Component({
   selector: 'app-stream',
@@ -9,7 +10,9 @@ import {Stream} from '../../model/stream'
 })
 export class StreamComponent implements OnInit {
 
- streams: Stream[]= [
+  streams:Stream[];
+  selectedStream:Stream;
+ /*streams: Stream[]= [
    {
      id:1,
      name:"Civil Engineering",
@@ -30,11 +33,17 @@ export class StreamComponent implements OnInit {
     name:"Computer Engineering",
     description:"Computer Engineering"
   },
-  ];
+ ];*/
 
-  constructor() { }
+  constructor(private streamService : StreamService) { }
 
   ngOnInit() {
+    this.getStreams();
   }
+  public getStreams():void{
+    this.streamService.getstream().subscribe(_stream=>{
 
+      this.streams=_stream
+    });
+  }
 }

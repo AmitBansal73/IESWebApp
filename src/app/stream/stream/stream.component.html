@@ -20,7 +20,7 @@
     </div>
     <ul class="stream">
         <li *ngFor="let stream of streams" >
-           <span class="badge">{{stream.id}}</span> {{stream.name}}, <a routerLink="/college" class="tab">Running in 10 Colleges</a>, <span class="tab">350 Students Enrolled</span>
+           <span class="badge">{{stream.StreamID}}</span> {{stream.StreamName}}, <a routerLink="/college" class="tab">Running in {{stream.CollegeCount}} Colleges</a>, <span class="tab">350 Students Enrolled</span>
         </li>
       </ul>
   </div>

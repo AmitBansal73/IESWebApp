@@ -1,7 +1,8 @@
 export class College {
-    id: number;
-    name: string;
-    univ_id:number;
-    univ_name:string;
-    student_count: number;
+  CollegeID: number;
+  collegeName: string;
+  StreamCount:number;
+  UnivID:number;
+  Address:string;
+  City:string;
   }

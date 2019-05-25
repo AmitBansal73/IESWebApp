@@ -14,33 +14,37 @@
     -->
 
    <ng-select [items]="universities"
-   bindLabel="name"
+   bindLabel="Name"
+   name="CollegeUniversity"
    placeholder="Select University"
    [(ngModel)]="selectedUniversity">
   </ng-select>
+
  </div>
  <div class="form-group">
     <label for="collegeName">College Name</label>
-    <input id="collegeName" class="form-control" placeholder="What is the name of College..."/>
+    <input id="collegeName" [(ngModel)]="college.collegeName" name="college" class="form-control" placeholder="What is the name of College..."/>
 
 </div>
 <div class="form-group">
     <label  for="collegeAddress">Address</label>
     <!--<input id="collegeAddress" class="form-control" placeholder="What is Address of College..."/>-->
-    <textarea id="collegeAddress" class="form-control" placeholder="What is Address of College..."></textarea>
+    <textarea id="collegeAddress" name="CollegeAddress" [(ngModel)]="college.Address"   class="form-control" placeholder="What is Address of College..."></textarea>
   </div>
   <div class="form-group">
       <label  for="collegeCity">City</label>
-      <input id="collegeCity" class="form-control" placeholder="In which City the College is..."/>
+      <input id="collegeCity" name="CollegeCity" [(ngModel)]="college.City" class="form-control" placeholder="In which City the College is..."/>
     </div>
     <div class="form-group">
         <label  for="collegeStream">Stream</label>
-        <textarea id="collegestream" class="form-control" placeholder="Add Streams here...."></textarea>
+
         
-        <ng-select [items]="streams"
-      id="stream"
-      bindLabel="name"
+      <ng-select [items]="streams"
+      id="StreamID"
+      bindLabel="StreamName"
+      name="CollegeStreamText"
       placeholder="Select Stream"
+      [multiple]=true
       [(ngModel)]="selectedStream">
      </ng-select>
 

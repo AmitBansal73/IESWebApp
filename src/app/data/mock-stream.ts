@@ -2,23 +2,27 @@ import {Stream} from '../model/stream'
 
 export const STREAM : Stream[] = [
     {
-        id:1,
-        name: 'Civil Engineering'   ,
-        description :'Civil Engineering'
+        StreamID:1,
+        StreamName: 'Civil Engineering'   ,
+        Description :'Civil Engineering',
+        CollegeCount :2
     },
     {
-        id:2,
-        name: 'Electrical Engineering'   ,
-        description :'Electrical Engineering'
+        StreamID:2,
+        StreamName: 'Electrical Engineering'   ,
+        Description :'Electrical Engineering',
+        CollegeCount :2
     },
     {
-        id:3,
-        name: 'Electronics Engineering'   ,
-        description :'Electronics Engineering'
+        StreamID:3,
+        StreamName: 'Electronics Engineering'   ,
+        Description :'Electronics Engineering',
+        CollegeCount :2
     },
     {
-        id:4,
-        name: 'Mechanical Engineering'   ,
-        description :'Mechanical Engineering'
+        StreamID:4,
+        StreamName: 'Mechanical Engineering'   ,
+        Description :'Mechanical Engineering',
+        CollegeCount :2
     },
 ];

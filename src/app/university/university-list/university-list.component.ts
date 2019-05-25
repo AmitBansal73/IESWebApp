@@ -14,6 +14,8 @@ export class UniversityListComponent implements OnInit {
 
   universities:University[];
 
+ 
+
   constructor(private universityService: UniversityService) { 
   
   }
@@ -29,7 +31,7 @@ export class UniversityListComponent implements OnInit {
       
       //console.log(JSON.stringify(univer));
       
-      this.universities = univer.$values});
+      this.universities = univer});
 
    
   }

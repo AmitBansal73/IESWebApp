@@ -54,9 +54,9 @@
 
         <ul class="paper">
           <li *ngFor="let paper of papers" >
-              <span class="badge">{{paper.id}}</span> {{paper.year}}, {{paper.subject}} 
-              {{paper.college}}, {{paper.university}}
-              <button type="button" class="btn btn-sm tab" routerLink="/ShowQuestions" >Questions</button>
+              <span class="badge">{{paper.Year}}</span> {{paper.SubjectName}}, {{paper.StreamName}} 
+              {{paper.UniversityName}}, {{paper.CollegeName}}
+              <button type="button" class="btn btn-sm tab" routerLink="/ShowQuestions/{{paper.PaperID}}" >Questions</button>
           </li>
         </ul>
 

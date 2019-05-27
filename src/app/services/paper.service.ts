@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
+
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 
-import{ College } from '../model/college';
+import{ Paper } from '../model/paper';
 import { Observable, of } from 'rxjs';
 import { tap, catchError } from 'rxjs/operators';
 import {CONSTANTS} from '../model/CONSTANTS';
@@ -15,28 +16,29 @@ const  httpOptions = {
 @Injectable({
   providedIn: 'root'
 })
+export class PaperService {
 
-export class CollegeService {
-  private baseUrl = CONSTANTS.API_URL + 'api/Colleges/';
-  private CollegesUrl = CONSTANTS.API_URL + 'api/Colleges/All';
-  private newcollegeurl = CONSTANTS.API_URL+ 'api/Colleges/NewWithStream';
+ 
+  private baseUrl = CONSTANTS.API_URL + 'api/Paper/';
+  private paperUrl = CONSTANTS.API_URL + 'api/Paper/All';
+  private newPaperurl = CONSTANTS.API_URL+ 'api/Paper/New';
 
   constructor(private http: HttpClient) { }
 
   
-  public getCollege(): Observable<College[]> {
-    return this.http.get<College[]>(this.CollegesUrl);
+  public getPaper(): Observable<Paper[]> {
+    return this.http.get<Paper[]>(this.paperUrl, httpOptions);
    }
 
-   public getCollegeByUniversity(id:number): Observable<College[]> {
-    return this.http.get<College[]>(this.baseUrl +"University/" +id );
+   public getPaperDetails(paperId:number): Observable<Paper> {
+    return this.http.get<Paper>(this.baseUrl+ paperId, httpOptions);
    }
+  
 
-
-  public addCollege(college:College){
-    return this.http.post<College>(this.newcollegeurl, JSON.stringify(college) ,httpOptions).pipe(
-      tap((newCollege:College)=>this.log(`added hero w/ id=1}`)),
-      catchError(this.handleError<College>('addHero'))
+  public addPaper(newPaper:Paper){
+    return this.http.post<Paper>(this.newPaperurl, JSON.stringify(newPaper) ,httpOptions).pipe(
+      tap((newPaper:Paper)=>this.log(`added new Paper w/ id=1}`)),
+      catchError(this.handleError<Paper>('addPaper'))
     );
   }
 
@@ -57,5 +59,9 @@ export class CollegeService {
       return of(result as T);
     };
   }
+
+
+
+
 
 }

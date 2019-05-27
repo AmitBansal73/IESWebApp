@@ -6,14 +6,19 @@ import {BrowserModule} from '@angular/platform-browser';
 import {FormControl, FormGroup, ReactiveFormsModule, FormsModule} from '@angular/forms';
 import {NgSelectModule, NgOption} from '@ng-select/ng-select';
 
-import {UniversityService} from '../../services/university.service'
-import {University} from '../../model/university'
+import {UniversityService} from '../../services/university.service';
+import {SubjectService} from '../../services/subject.service';
+import {CollegeService} from '../../services/college.service';
+import {StreamService} from '../../services/stream.service';
+import {SemesterService} from '../../services/semester.service';
+import {PaperService} from '../../services/paper.service';
 
-import {CollegeService} from '../../services/college.service'
 import {College} from '../../model/college'
-
-import {STREAM} from '../../data/mock-stream'
 import {Stream} from '../../model/stream'
+import {University} from '../../model/university'
+import {Subject} from '../../model/subject'
+import { Semester } from 'src/app/model/semester';
+import { Paper } from 'src/app/model/paper';
 
 @Component({
   selector: 'app-paper-new',
@@ -24,43 +29,105 @@ export class PaperNewComponent implements OnInit {
   @Output() added = new EventEmitter<boolean>();
 
   universities : University[];
-  selectedUniversity: any;
-  selectedUniversityId: number;
+  selectedUniversity: University;
 
   colleges : College[];
-  selectedCollege:any;
-  selectedCollegeId: number;
+  selectedCollege:College;
+ 
+  streams : Stream[];
+  selectedStream:Stream;
 
-  streams : Stream[] = STREAM;
-  selectedStream:any;
-  selectedStreamId: number;
+  subjects: Subject[];
+  selectedSubject:Subject;
 
-  semesters : string[] = ['1st', '2nd', '3rd', '4th', '5th','6th','7th','8th'];
-  selectedSemester:string;
+  semesters:Semester[];
+  selectedSemester : Semester;
+
+  newPaper:Paper = { PaperID :0, UniversityID :0, CollegeID: 0, StreamID:0, SubjectID:0, SemID:0, Year:0, Cost:10,
+    SubjectName: "" , CollegeName: "", UniversityName: "",  StreamName:"", SemesterName:"", PaidAmount: 100,
+    PurchaseDate: "", UserID: 0
+   };
+
+  year:number;
 
   constructor(
     private universityService: UniversityService,
     private collegeService: CollegeService,
-    private location : Location
+    private location : Location,
+    private subjectService : SubjectService,
+    private semesterService : SemesterService,
+    private paperService: PaperService,
+    private streamService: StreamService
     ) { }
 
   ngOnInit() {
     this.getUniversities();
-    this.getColleges();
+   // this.getColleges();
+    this.getSubjects();
+    this.getSemesters();
   }
 
   getUniversities():void{
     this.universityService.getUniversities()
-    .subscribe(univer=> this.universities = univer);
+    .subscribe(univer=> {this.universities = univer;
+     });
   }
 
   getColleges():void{
     this.collegeService.getCollege()
-    .subscribe(colleges=> this.colleges = colleges);
+    .subscribe(colleges=> {this.colleges = colleges;
+    
+    });
   }
 
-  Submit():void{
-    this.location.back();
+  GetCollegeForUniversity():void{
+   
+    this.collegeService.getCollegeByUniversity(this.selectedUniversity.UnivID)
+    .subscribe(colleges=> {this.colleges = colleges;
+  
+    });
+  }
+
+  GetStreamForCollege():void{
+   
+    this.streamService.getstreamForCollege(this.selectedCollege.CollegeID)
+    .subscribe(st=> {this.streams = st;
+    console.log(st);
+    });
+  }
+
+  getSubjects():void{
+    this.subjectService.getSubject()
+    .subscribe(subject=> {this.subjects = subject;
+    
+    });
+  }
+
+  getSemesters():void{
+    this.semesterService.getSemester()
+    .subscribe(sem=> {this.semesters = sem;
+    
+    });
+  }
+
+  AddPaper():void{
+  
+    this.newPaper.PaperID=0; 
+    this.newPaper.UniversityID = this.selectedUniversity.UnivID;
+    this.newPaper.CollegeID= this.selectedCollege.CollegeID;
+    this.newPaper.StreamID=this.selectedStream.StreamID;
+    this.newPaper.SubjectID=this.selectedSubject.SubjectID;
+    this.newPaper.SemID=this.selectedSubject.SubjectID;
+    this.newPaper.Year = this.year;
+    this.newPaper.Cost=10;
+
+    this.paperService.addPaper(this.newPaper).subscribe(_paper=>
+    {
+      this.location.back();
+    },
+    err=> alert("error")
+    );
+
   }
 
   Cancel():void{

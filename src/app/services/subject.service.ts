@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
-import { Stream } from '../model/stream';
+
+import { Subject } from '../model/subject';
 
 import {HttpClient ,HttpHeaders} from '@angular/common/http';
 import { Observable } from 'rxjs/internal/Observable';
@@ -12,31 +13,39 @@ const  HttpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
 };
 
+
 @Injectable({
   providedIn: 'root'
 })
 
-export class StreamService {
+export class SubjectService {
+
+  private subject_url= CONSTANTS.API_URL+ 'api/Subject/All';
+  private newSubject_url= CONSTANTS.API_URL+ 'api/Subject/New';
   
-  private baseUrl= CONSTANTS.API_URL+ 'api/Stream/';
-  private streamurl= CONSTANTS.API_URL+ 'api/Stream/All';
-  private newstreamurl= CONSTANTS.API_URL+ 'api/Stream/New';
-  encoded=encodeURI(this.streamurl); 
+  
+
   constructor(private http:HttpClient) { }
 
-  public getstream():Observable<Stream[]>{
-    return this.http.get<Stream[]>(this.streamurl);
-  }
-  
-
-  public getstreamForCollege(CollegeId:number):Observable<Stream[]>{
-    return this.http.get<Stream[]>(this.baseUrl + "College/" + CollegeId);
+  public getSubject():Observable<Subject[]>{
+    return this.http.get<Subject[]>(this.subject_url);
   }
 
+  public addSubject(subject:Subject){
+
+    console.log(JSON.stringify(subject));
+
+    return this.http.post<Subject>(this.newSubject_url,JSON.stringify(subject) ,HttpOptions).pipe(
+
+      tap(()=>this.log(`added Subject w/ id=${subject.SubjectName}`)),
+      catchError(this.handleError<Subject>('Add Subject'))
+
+      );
+  }
 
   public log(message:string)
   {
-    console.log(`StreamService: ${message}`);
+    console.log(`SubjectService: ${message}`);
   }
 
   private handleError<T> (operation = 'operation', result?: T) {
@@ -53,12 +62,5 @@ export class StreamService {
     };
   }
 
-  public addStream(stream:Stream){
 
-    console.log(JSON.stringify(stream));
-    return this.http.post<Stream>(this.newstreamurl,JSON.stringify(stream) ,HttpOptions).pipe(
-      tap(()=>this.log(`added Stream w/ id=${stream.StreamName}`)),
-      catchError(this.handleError<Stream>('Add Stream'))
-      );
-  }
 }

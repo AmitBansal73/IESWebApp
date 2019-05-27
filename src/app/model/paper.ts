@@ -1,9 +1,19 @@
 export class Paper{
-    id:number;
-    year: string;
-    semester: number;
-    subject: string;
-    college: string;
-    university: string;
-  
+    PaperID:number;
+    UniversityID: number;
+    CollegeID: number;
+    StreamID: number;
+    SubjectID: number;
+    SemID: number;
+    Year: number;
+    Cost: number;
+
+    SubjectName: String;
+    CollegeName: String;
+    UniversityName:String;
+    StreamName:String;
+    SemesterName:String;
+    PaidAmount: number;
+    PurchaseDate: String;
+    UserID: number;
 }

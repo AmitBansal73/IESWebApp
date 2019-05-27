@@ -1,52 +1,24 @@
 import {Paper} from '../model/paper'
+import { College } from '../model/college';
 
 export const PAPER : Paper[] = [
     {
-        id: 1,
-        year: '2017',
-        semester: 1,
-        subject: "Fluid Mechanics",
-        college: 'ITS College',
-        university: 'CCS University'
-    },
-    {
-        id: 2,
-        year: '2018',
-        semester: 1,
-        subject: "Thermodynamics",
-        college: 'KIET College',
-        university: 'CCS University'
-    },
-    {
-        id: 3,
-        year: '2013',
-        semester: 1,
-        subject: "Fluid Mechanics",
-        college: 'AK Garg College',
-        university: 'GB Pant University'
-    },
-    {
-        id: 4,
-        year: '2014',
-        semester: 2,
-        subject: "Fluid Mechanics",
-        college: 'KIET College',
-        university: 'CCS University'
-    },
-    {
-        id: 5,
-        year: '2015',
-        semester: 3,
-        subject: "Fluid Mechanics",
-        college: 'AK Garg College',
-        university: 'GB Pant University'
-    },
-    {
-        id: 6,
-        year: '2014',
-        semester: 1,
-        subject: "Fluid Mechanics",
-        college: 'ITS College',
-        university: 'CCS University'
+        PaperID: 1,
+        Year: 2017,
+        SemID: 1,
+        SubjectName: "Fluid Mechanics",
+        CollegeName: 'ITS College',
+        UniversityName: 'CCS University',
+        UniversityID:1,
+        CollegeID:1,
+        SubjectID:1,
+        Cost:20,
+        PaidAmount:10,
+        PurchaseDate:'',
+        SemesterName:'',
+        StreamID:1,
+        StreamName:'',
+        UserID:1
     }
+   
 ];

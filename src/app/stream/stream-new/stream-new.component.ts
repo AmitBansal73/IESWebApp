@@ -25,8 +25,6 @@ export class StreamNewComponent implements OnInit {
 
   Submit():void{
 
-  
-
     this.streamService.addStream(this.stream).subscribe(_stream=>
     {
     this.location.back()

@@ -1,4 +1,6 @@
 export class Subject{
-    id: number;
-    name: string;
+    SubjectID: number;
+    SubjectName: string;
+    Description: String;
+    Unit: number;
 }

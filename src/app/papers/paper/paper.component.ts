@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
 import {Paper} from '../../model/paper';
-import {PAPER} from '../../data/mock-paper';
+import {PaperService} from '../../services/paper.service';
+
 
 @Component({
   selector: 'app-paper',
@@ -13,19 +14,28 @@ export class PaperComponent implements OnInit {
 
   newPaper:boolean = false;
 
-  papers : Paper[] = PAPER;
+  papers : Paper[];
 
-  constructor() { }
+  constructor(private paperService: PaperService) { 
+
+  }
 
   ngOnInit() {
+    this.GetPapers();
+  }
+
+  GetPapers():void{
+    this.paperService.getPaper().subscribe(
+      paper=> {
+        this.papers = paper,
+        console.log(paper);
+      });
   }
 
   search(val: string): Paper[] {
-    return val ? this.papers.filter(paper => paper.university.toLowerCase().indexOf(val.toLowerCase()) === 0)
+    return val ? this.papers.filter(paper => paper.UniversityName.toLowerCase().indexOf(val.toLowerCase()) === 0)
       : this.papers;
   }
-
-  
 
   NewPaper(): void {
     this.newPaper = true;

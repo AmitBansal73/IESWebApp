@@ -1,7 +1,8 @@
 export class Question{
-id:number;
-question:string;
-answer:string;
-level: number;
-
+QuestionID:number;
+Question:string;
+Solution:string;
+DifficultyLevel: number;
+SubjectID: number;
+TopicID:number;
 }

@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
 
+import {SubjectService} from '../../services/subject.service'
+import { Subject } from '../../model/subject';
+
 @Component({
   selector: 'app-subject-new',
   templateUrl: './subject-new.component.html',
@@ -8,11 +11,26 @@ import { Location } from '@angular/common';
 })
 export class SubjectNewComponent implements OnInit {
 
-  constructor(private location: Location) { }
+  subject:Subject;
+
+  constructor(private location: Location,
+    private subjectService: SubjectService
+    ) { }
 
   ngOnInit() {
   }
+
+
   Submit():void{
+    this.subjectService.addSubject(this.subject).subscribe(_subject=>
+      {
+      this.location.back()
+      });
+
+    this.location.back();
+  }
+
+  Cancel():void{
     this.location.back();
   }
 

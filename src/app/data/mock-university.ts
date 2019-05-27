@@ -1,10 +1,9 @@
-import {Question} from '../model/question'
+import {University} from '../model/university'
 
-export const QUESTIONS : Question[] = [
-    {
-        id:1,
-        question: ' If  $\\phi(x) =\\int_{x^2}^0\\sqrt{tdt}$ , then what would the value of  ${{d\\phi}\\over{dx}}$ ',
-        answer:'Answer :- $2{x^2}$',
-        level:2
-    }
-];
+export const university : University[] = [{
+    UnivID:0,
+    Name:'',
+    CollegeCount:5
+}
+  
+]

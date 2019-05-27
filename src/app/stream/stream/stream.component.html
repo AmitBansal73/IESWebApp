@@ -11,7 +11,7 @@
       </h4>
     </div>
     <div class="col-md-1">
-      <button class="btn btn-primary btn-sm" title="+New Stream" routerLink="/newStream">+New</button>
+      <button class="btn btn-primary btn-sm" title="+New Stream" routerLink="/newStream">+New Stream</button>
     </div>
     <div class="col-md-2"></div>
     </div>
@@ -19,10 +19,17 @@
        <div class="container"> <input type="text" placeholder="University"> <input type="text" placeholder="Stream"></div>
     </div>
     <ul class="stream">
-        <li *ngFor="let stream of streams" >
-           <span class="badge">{{stream.StreamID}}</span> {{stream.StreamName}}, <a routerLink="/college" class="tab">Running in {{stream.CollegeCount}} Colleges</a>, <span class="tab">350 Students Enrolled</span>
+        <li *ngFor="let stream of streams  | paginate:{itemsPerPage:5 , currentPage: p }; index as i" >
+           <span class="badge">{{i+1}}</span> {{stream.StreamName}}, <a routerLink="/college" class="tab">Running in {{stream.CollegeCount}} Colleges</a>, <span class="tab">350 Students Enrolled</span>
         </li>
       </ul>
+      <div class="row">
+          <div class="col-md-2"></div>
+            <div class="col-md-8">
+              <pagination-controls (pageChange)="p = $event"></pagination-controls>
+            </div>
+          <div class="col-md-2"></div>
+        </div>
   </div>
   <div class="col-sm-1"></div>
 </div>

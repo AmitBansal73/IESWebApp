@@ -26,7 +26,7 @@ import { StreamNewComponent } from './stream/stream-new/stream-new.component';
 import { SubjectNewComponent } from './subject/subject-new/subject-new.component';
 import { SubjectDetailsComponent } from './subject/subject-details/subject-details.component';
 import { StudentComponent } from './student/student/student.component';
-
+import { NgxPaginationModule } from 'ngx-pagination'
 @NgModule({
   declarations: [
     AppComponent,
@@ -56,7 +56,8 @@ import { StudentComponent } from './student/student/student.component';
     AppRoutingModule,
     KatexModule,
     FormsModule,
-    NgSelectModule
+    NgSelectModule,
+    NgxPaginationModule
 
   ],
   providers: [],

@@ -11,7 +11,7 @@ import { University } from 'src/app/model/university';
 })
 export class UniversityNewComponent implements OnInit {
 
-  university:University= {UnivID:0,Name:"",CollegeCount:0};
+  university:University= {UnivID:0, UniversityName:"",CollegeCount:0};
 
   constructor(
     private location: Location,

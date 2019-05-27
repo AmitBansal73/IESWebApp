@@ -19,7 +19,7 @@ export class CollegeNewComponent implements OnInit {
 
   selectedStream:Stream[];
 
-  selectedUniversity:University= {UnivID:0,CollegeCount:0,Name:"" };
+  selectedUniversity:University= {UnivID:0,CollegeCount:0,UniversityName:"" };
 
   college:any={
     CollegeID:0 , UnivID:this.selectedUniversity.UnivID  ,collegeName:"", Address:"",City:"" ,StreamCount:0,

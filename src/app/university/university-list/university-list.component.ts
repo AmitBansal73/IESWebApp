@@ -13,8 +13,7 @@ import {UniversityService} from '../../services/university.service'
 export class UniversityListComponent implements OnInit {
 
   universities:University[];
-
- 
+  p:number=1;
 
   constructor(private universityService: UniversityService) { 
   
@@ -23,7 +22,6 @@ export class UniversityListComponent implements OnInit {
   ngOnInit() {
     this.getUniversities();
   }
-
 
   getUniversities():void{
     this.universityService.getUniversities()

@@ -53,13 +53,19 @@
         </div>
 
         <ul class="paper">
-          <li *ngFor="let paper of papers" >
+          <li *ngFor="let paper of papers  | paginate:{itemsPerPage:5 , currentPage: p }; index as i;" >
               <span class="badge">{{paper.Year}}</span> {{paper.SubjectName}}, {{paper.StreamName}} 
               {{paper.UniversityName}}, {{paper.CollegeName}}
               <button type="button" class="btn btn-sm tab" routerLink="/ShowQuestions/{{paper.PaperID}}" >Questions</button>
           </li>
         </ul>
-
+        <div class="row">
+            <div class="col-md-2"></div>
+              <div class="col-md-8">
+                <pagination-controls (pageChange)="p = $event"></pagination-controls>
+              </div>
+            <div class="col-md-2"></div>
+          </div>
     </div>
     <div class="col-sm-2">
 

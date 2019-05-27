@@ -17,18 +17,24 @@
         </div>
       </div>
         <ul class="university">
-            <li *ngFor="let university of universities"
+            <li *ngFor="let university of universities  | paginate:{itemsPerPage:5 , currentPage: p }; index as i;"
             [class.selected]="university === selectedUniversity"
             (click)="onSelect(university)" class="col-md-6">
   
-                  <span class="badge">{{university.UnivID}}</span> {{university.UniversityName}} <a routerLink="/college" class="tab"> {{university.CollegeCount}} Colleges affiliated to it.</a> ,
+                  <span class="badge">{{i}}</span> {{university.UniversityName}} <a routerLink="/college" class="tab"> {{university.CollegeCount}} Colleges affiliated to it.</a> ,
                   <a routerLink="/Student" class="tab"> 1200 Students Registered</a>
   
                   <!---<button class="delete" title="delete university"
                   (click)="delete(university)">x</button>-->
             </li>
         </ul>
-    
+        <div class="row">
+            <div class="col-md-2"></div>
+              <div class="col-md-8">
+                <pagination-controls (pageChange)="p = $event"></pagination-controls>
+              </div>
+            <div class="col-md-2"></div>
+          </div>
     
     </div>
 

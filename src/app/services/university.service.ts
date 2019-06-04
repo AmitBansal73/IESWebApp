@@ -26,8 +26,8 @@ export class UniversityService {
   
   encoded = encodeURI(this.UniversitysUrl);
 
-  university:University={ UnivID: 0,
-    Name: "",
+  university:University={ UniversityID: 0,
+    UniversityName: "",
     CollegeCount:0};
 
   constructor(private http: HttpClient) { }
@@ -36,14 +36,14 @@ export class UniversityService {
     //return this.http.get<University[]>(this.UniversitysUrl);
 
     return of([
-      {UnivID:1,
-        Name:'CCS University',
+      {UniversityID:1,
+        UniversityName:'CCS University',
         CollegeCount:0},
-        {UnivID:2,
-        Name: 'BR Ambedkar University',
+        {UniversityID:2,
+          UniversityName: 'BR Ambedkar University',
         CollegeCount:0},
-        {UnivID:3,
-          Name: 'Banaras Hindu University',
+        {UniversityID:3,
+          UniversityName: 'Banaras Hindu University',
           CollegeCount:0}
     ]);
   }
@@ -71,7 +71,7 @@ export class UniversityService {
 
   public addUniversity(university: University){
     return this.http.post<University>(this.addUrl, JSON.stringify(university), httpOptions).pipe(
-      tap((newUniversity: University) => this.log(`added hero w/ id=${newUniversity.UnivID}`)),
+      tap((newUniversity: University) => this.log(`added hero w/ id=${newUniversity.UniversityID}`)),
       catchError(this.handleError<University>('addHero'))
     );
   }

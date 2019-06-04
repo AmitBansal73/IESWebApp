@@ -11,7 +11,13 @@ import { Subject } from '../../model/subject';
 })
 export class SubjectNewComponent implements OnInit {
 
-  subject:Subject;
+  subject:Subject=
+  {
+    SubjectID: 0,
+    SubjectName:"",
+    Description: "",
+    Unit: 0
+  };
 
   constructor(private location: Location,
     private subjectService: SubjectService

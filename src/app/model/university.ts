@@ -1,7 +1,7 @@
 export class University {
-  UnivID: number;
-    Name: string;
-    CollegeCount:number;
+  UniversityID: number;
+  UniversityName: string;
+  CollegeCount:number;
   }
 
 

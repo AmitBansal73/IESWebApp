@@ -19,10 +19,10 @@ export class CollegeNewComponent implements OnInit {
 
   selectedStream:Stream[];
 
-  selectedUniversity:University= {UnivID:0,CollegeCount:0,UniversityName:"" };
+  selectedUniversity:University= {UniversityID:0,CollegeCount:0,UniversityName:"" };
 
   college:any={
-    CollegeID:0 , UnivID:this.selectedUniversity.UnivID  ,collegeName:"", Address:"",City:"" ,StreamCount:0,
+    CollegeID:0 , UnivID:this.selectedUniversity.UniversityID  ,collegeName:"", Address:"",City:"" ,StreamCount:0,
     Streams: this.selectedStream
     
   };
@@ -72,7 +72,7 @@ export class CollegeNewComponent implements OnInit {
     console.log(JSON.stringify(this.selectedStream));
    
     this.college.streams = this.selectedStream;
-    this.college.UnivID = this.selectedUniversity.UnivID;
+    this.college.UnivID = this.selectedUniversity.UniversityID;
     console.log(JSON.stringify(this.college));
 
 

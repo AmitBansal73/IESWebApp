@@ -82,7 +82,7 @@ export class PaperNewComponent implements OnInit {
 
   GetCollegeForUniversity():void{
    
-    this.collegeService.getCollegeByUniversity(this.selectedUniversity.UnivID)
+    this.collegeService.getCollegeByUniversity(this.selectedUniversity.UniversityID)
     .subscribe(colleges=> {this.colleges = colleges;
   
     });
@@ -113,7 +113,7 @@ export class PaperNewComponent implements OnInit {
   AddPaper():void{
   
     this.newPaper.PaperID=0; 
-    this.newPaper.UniversityID = this.selectedUniversity.UnivID;
+    this.newPaper.UniversityID = this.selectedUniversity.UniversityID;
     this.newPaper.CollegeID= this.selectedCollege.CollegeID;
     this.newPaper.StreamID=this.selectedStream.StreamID;
     this.newPaper.SubjectID=this.selectedSubject.SubjectID;

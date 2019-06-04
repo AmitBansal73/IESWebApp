@@ -43,7 +43,7 @@
                 Available Papers 
             </h4>
           </div>
-          <div class="col-md-2">
+          <div class="col-md-4">
               <button type="button" class="btn stn-success new-btn" routerLink="/newPaper"  >New Paper</button>
           </div>
           <div class="col-md-1"></div>
@@ -60,14 +60,14 @@
           </li>
         </ul>
         <div class="row">
-            <div class="col-md-2"></div>
+            <div class="col-md-4"></div>
               <div class="col-md-8">
                 <pagination-controls (pageChange)="p = $event"></pagination-controls>
               </div>
             <div class="col-md-2"></div>
           </div>
     </div>
-    <div class="col-sm-2">
+    <div class="col-sm-4">
 
         <div *ngIf="newPaper" class="new-paper-panel" >
 

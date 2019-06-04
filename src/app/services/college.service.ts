@@ -17,9 +17,9 @@ const  httpOptions = {
 })
 
 export class CollegeService {
-  private baseUrl = CONSTANTS.API_URL + 'api/Colleges/';
-  private CollegesUrl = CONSTANTS.API_URL + 'api/Colleges/All';
-  private newcollegeurl = CONSTANTS.API_URL+ 'api/Colleges/NewWithStream';
+  private baseUrl = CONSTANTS.API_URL + 'api/College/';
+  private CollegesUrl = CONSTANTS.API_URL + 'api/College/All';
+  private newcollegeurl = CONSTANTS.API_URL+ 'api/College/NewWithStream';
 
   constructor(private http: HttpClient) { }
 

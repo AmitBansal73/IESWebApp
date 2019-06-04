@@ -3,6 +3,8 @@ import { Component, OnInit } from '@angular/core';
 import {Paper} from '../../model/paper';
 import {PaperService} from '../../services/paper.service';
 
+import {search} from '../../pipe/search';
+
 
 @Component({
   selector: 'app-paper',
@@ -15,6 +17,7 @@ export class PaperComponent implements OnInit {
   newPaper:boolean = false;
 
   papers : Paper[];
+  SearchText:string;
 
   constructor(private paperService: PaperService) { 
 

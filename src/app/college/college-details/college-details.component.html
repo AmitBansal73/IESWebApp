@@ -1,0 +1,29 @@
+
+
+
+
+<div class="container-fluid">
+  <div class="row">
+
+    <div class="col-md-3"></div>
+    <div class="col-md-6">
+        <div *ngIf='collegeDetails'>
+
+
+            <h5>{{collegeDetails.CollegeName}} </h5>
+            </div>
+          
+            <ng-select [items]="streams"
+                       id="StreamID"
+                       bindLabel="StreamName"
+                       [multiple]=true
+                       [(ngModel)]="selectedStream">
+            </ng-select>
+            <button type="button" class="btn btn-primary" (click)="Submit()" >Submit</button>
+            <button type="button" class="btn btn-danger" (click)="Cancel()" >Cancel</button>
+            
+    </div>
+    <div class="col-md-3"></div>
+  </div>
+
+</div>

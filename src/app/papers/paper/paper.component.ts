@@ -17,6 +17,8 @@ export class PaperComponent implements OnInit {
 
   papers : Paper[];
   SearchText:string;
+  control:string;
+  //searchtext:string;
 
   constructor(private paperService: PaperService) { 
 
@@ -26,6 +28,10 @@ export class PaperComponent implements OnInit {
     this.GetPapers();
   }
 
+  public setcontrol(name:string ,textfield:string){
+    this.control=name;
+   // this.SearchText=textfield;
+  }
   GetPapers():void{
     this.paperService.getPaper().subscribe(
       paper=> {

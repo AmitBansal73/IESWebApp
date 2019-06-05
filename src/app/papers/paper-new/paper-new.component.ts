@@ -45,7 +45,7 @@ export class PaperNewComponent implements OnInit {
 
   newPaper:Paper = { PaperID :0, UniversityID :0, CollegeID: 0, StreamID:0, SubjectID:0, SemID:0, Year:0, Cost:10,
     SubjectName: "" , CollegeName: "", UniversityName: "",  StreamName:"", SemesterName:"", PaidAmount: 100,
-    PurchaseDate: "", UserID: 0 ,QuesCount:0
+    PurchaseDate: "", UserID: 0 ,questioncount:0
    };
 
   year:number;

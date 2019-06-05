@@ -16,11 +16,11 @@
     <div class="col-md-2"></div>
     </div>
       <div class="search-bar">
-        <input type="text" placeholder="University" /><input type="text" placeholder="College"></div>
+        <input type="text" [(ngModel)]="SearchText" placeholder="Subject"></div>
 
       <ul class="subject">
-        <li *ngFor="let subject of subjects  | paginate:{itemsPerPage:5 , currentPage: p }; index as i;">
-          <span class="badge">{{i}}</span> {{subject.SubjectName}} Unit-{{subject.Unit}}  <a routerLink="/SubjectDetails" class="tab">   12 Topics</a> ,<span class="tab">42 Question Papers</span>
+        <li *ngFor="let subject of subjects  | search: SearchText:'SubjectName' | paginate:{itemsPerPage:5 , currentPage: p }; index as i;">
+          <span class="badge">{{i+1}}</span> {{subject.SubjectName}} Unit-{{subject.Unit}}  <a routerLink="/SubjectDetails" class="tab">   12 Topics</a> ,<span class="tab">42 Question Papers</span>
         </li>
       </ul>
       <div class="row">

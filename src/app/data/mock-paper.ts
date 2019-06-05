@@ -19,7 +19,7 @@ export const PAPER : Paper[] = [
         StreamID:1,
         StreamName:'',
         UserID:1,
-        QuesCount:0
+        questioncount:0
     }
    
 ];

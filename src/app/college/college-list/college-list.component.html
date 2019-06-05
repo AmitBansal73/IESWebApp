@@ -13,10 +13,10 @@
     </div>
     </div>
     <div class="search-bar">
-        <div class="container"> <input type="text" placeholder="University"> </div>
+        <div class="container"> <input type="text" [(ngModel)]="SearchText" placeholder="University"> </div>
      </div>
       <ul class="college">
-        <li *ngFor="let college of colleges  | paginate:{itemsPerPage:5 , currentPage: p }; index as i"
+        <li *ngFor="let college of colleges | search:SearchText : 'CollegeName' | paginate:{itemsPerPage:5 , currentPage: p }; index as i"
         [class.selected]="college === selectedCollege"
         (click)="onSelect(college)">
 

@@ -11,7 +11,7 @@ import {StreamService} from '../../services/stream.service'
 
 
 export class StreamComponent implements OnInit {
-
+  p = 1;
   streams:Stream[];
   selectedStream:Stream;
  

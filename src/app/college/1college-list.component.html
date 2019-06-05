@@ -1,0 +1,38 @@
+
+<div class="container-fluid">
+  <div class="row">
+<div class="col-sm-2"></div>
+<div class="col-sm-8">
+    <div class="row">
+        <div class="col-md-10">
+      <h4>College List</h4>
+    </div>
+        
+    <div class="col-md-1">
+      <button class="btn btn-primary btn-sm" routerLink="/newCollege"> +New College </button>
+    </div>
+    </div>
+    <div class="search-bar">
+        <div class="container"> <input type="text" [(ngModel)]="search_text" placeholder="University"> </div>
+     </div>
+      <ul class="college">
+        <li *ngFor="let college of colleges | search: search_text"
+        [class.selected]="college === selectedCollege"
+        (click)="onSelect(college)">
+
+            <span class="badge">{{college.CollegeID}}</span><a routerLink="/CollegeDetail/{{college.CollegeID}}" >
+               {{college.CollegeName}},</a><a routerLink="/stream" class="tab"> Total {{college.StreamCount}} Streams</a> ,
+               <span class="tab">Total {{college.StudentCount}} Students</span>
+
+           <!--- <button class="delete" title="delete university"
+            (click)="delete(college)">x</button>-->
+        </li>   
+      </ul>
+
+      <!---<button class="btn btn-danger" routerLink="/newCollege">Add New College </button>-->
+    </div>
+    <div class="col-sm-2"></div>
+  </div>
+    </div>
+
+      

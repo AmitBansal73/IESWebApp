@@ -3,7 +3,6 @@ import { Component, OnInit } from '@angular/core';
 import {Paper} from '../../model/paper';
 import {PaperService} from '../../services/paper.service';
 
-import {search} from '../../pipe/search';
 
 
 @Component({
@@ -13,7 +12,7 @@ import {search} from '../../pipe/search';
 })
 
 export class PaperComponent implements OnInit {
-
+  p = 1;
   newPaper:boolean = false;
 
   papers : Paper[];

@@ -43,7 +43,7 @@
                 Available Papers 
             </h4>
           </div>
-          <div class="col-md-4">
+          <div class="col-md-2">
               <button type="button" class="btn stn-success new-btn" routerLink="/newPaper"  >New Paper</button>
           </div>
           <div class="col-md-1"></div>
@@ -53,21 +53,15 @@
         </div>
 
         <ul class="paper">
-          <li *ngFor="let paper of papers  | search:SearchText  | paginate:{itemsPerPage:5 , currentPage: p }; index as i;" >
+          <li *ngFor="let paper of papers | search:SearchText" >
               <span class="badge">{{paper.Year}}</span> {{paper.SubjectName}}, {{paper.StreamName}} 
               {{paper.UniversityName}}, {{paper.CollegeName}}
-              <button type="button" class="btn btn-sm tab" routerLink="/ShowQuestions/{{paper.PaperID}}" >{{paper.QuesCount}} Questions</button>
+              <button type="button" class="btn btn-sm tab" routerLink="/ShowQuestions/{{paper.PaperID}}" >Questions</button>
           </li>
         </ul>
-        <div class="row">
-            <div class="col-md-4"></div>
-              <div class="col-md-8">
-                <pagination-controls (pageChange)="p = $event"></pagination-controls>
-              </div>
-            <div class="col-md-2"></div>
-          </div>
+
     </div>
-    <div class="col-sm-4">
+    <div class="col-sm-2">
 
         <div *ngIf="newPaper" class="new-paper-panel" >
 

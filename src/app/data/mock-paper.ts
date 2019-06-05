@@ -18,7 +18,8 @@ export const PAPER : Paper[] = [
         SemesterName:'',
         StreamID:1,
         StreamName:'',
-        UserID:1
+        UserID:1,
+        QuesCount:0
     }
    
 ];

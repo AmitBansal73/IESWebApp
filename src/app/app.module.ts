@@ -27,6 +27,8 @@ import { SubjectNewComponent } from './subject/subject-new/subject-new.component
 import { SubjectDetailsComponent } from './subject/subject-details/subject-details.component';
 import { StudentComponent } from './student/student/student.component';
 import { NgxPaginationModule } from 'ngx-pagination'
+import { CollegeDetailsComponent } from './college/college-details/college-details.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -46,7 +48,8 @@ import { NgxPaginationModule } from 'ngx-pagination'
     StreamNewComponent,
     SubjectNewComponent,
     SubjectDetailsComponent,
-    StudentComponent
+    StudentComponent,
+    CollegeDetailsComponent
    
   ],
   imports: [

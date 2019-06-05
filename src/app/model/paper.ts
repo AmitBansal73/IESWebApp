@@ -16,4 +16,5 @@ export class Paper{
     PaidAmount: number;
     PurchaseDate: String;
     UserID: number;
+    QuesCount:number;
 }

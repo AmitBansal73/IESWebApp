@@ -55,6 +55,12 @@
       <label for="YearName">Write Year here</label>
     <input   name = "Year" [(ngModel)]="year" id="YearName" class="form-control" placeholder="Year"/>
   </div>
+
+  <div class="form-group">
+    <label for="YearName">Cost of Qusetion Paper </label>
+  <input   name = "Cost" [(ngModel)]="cost" id="PaperCost" class="form-control" placeholder="Cost of Qusetion Paper "/>
+</div>
+
   <button type="button" class="btn btn-danger space" (click)="Cancel()" >Cancel</button>
   <button type="button" class="btn btn-primary" (click)="AddPaper()" >Submit</button>
   </form>

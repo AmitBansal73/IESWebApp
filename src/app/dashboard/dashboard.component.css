@@ -36,6 +36,7 @@
     min-width: 120px;
     background-color: #607d8b;
     border-radius: 2px;
+    height:140px;
   }
   .module:hover {
     background-color: #eee;
@@ -66,4 +67,11 @@
     width: 75%;
     border: 1px solid darkred;
     height: 300px;
+  }
+
+  .span{
+    color:cornsilk; 
+    font-weight: bold; 
+    font-size: 1.5em;
+    padding-right: .5em;
   }

@@ -10,7 +10,7 @@ import { SubjectService } from 'src/app/services/subject.service';
   styleUrls: ['./subject.component.css']
 })
 export class SubjectComponent implements OnInit {
-
+  p = 1;
   subjects:Subject[];
 
   constructor( private subjectService: SubjectService) { }

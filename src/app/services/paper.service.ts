@@ -31,7 +31,7 @@ export class PaperService {
    }
 
    public getPaperDetails(paperId:number): Observable<Paper> {
-    return this.http.get<Paper>(this.baseUrl+ paperId, httpOptions);
+    return this.http.get<Paper>(this.baseUrl+'Paper/' + paperId, httpOptions);
    }
   
 

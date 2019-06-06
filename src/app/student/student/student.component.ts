@@ -11,6 +11,7 @@ import {Student} from '../../model/students';
 })
 export class StudentComponent implements OnInit {
 
+  p = 1;
   students: Student[]= STUDENTS;
 
   constructor() { }

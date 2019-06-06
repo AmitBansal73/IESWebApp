@@ -4,17 +4,20 @@
     <h4>Add New Subject</h4>
  <!--- <div  class="NewForm">-->
   <div ></div> 
-  <form>
+  <div>
   
    <div class="form-group" >
      <label  for="subjectName">Enter Subject Name</label>
-     <input id="subjectName" class="form-control" placeholder="Subject Name Here"/>
-  
+     <input id="subjectName" [(ngModel)]="subject.SubjectName" class="form-control" placeholder="Subject Name Here"/>
+
+     <label for="SubjectDescription">Enter Unit</label>
+     <input id="Unit" [(ngModel)]="subject.Unit" class="form-control" placeholder="Enter Unit..."/>
+
       <label for="SubjectDescription">Enter Description</label>
-    <textarea id="SubjectDescription" class="form-control" placeholder="Description"></textarea>
+    <textarea id="SubjectDescription" class="form-control" [(ngModel)]="subject.Description" placeholder="Description"></textarea>
   
   <button type="submit" class="btn btn-primary" (click)="Submit()">Submit</button>
   <button type="cancel" class="btn btn-danger" (click)="Cancel()">Cancel</button>
 </div>
-  </form>
+  </div>
   </div>

@@ -12,6 +12,7 @@ export class CollegeListComponent implements OnInit {
 
   colleges:College[];
   selectedCollege:College;
+  p = 1;
 
   constructor(private collegeService : CollegeService) { }
 

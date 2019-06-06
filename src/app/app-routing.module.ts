@@ -16,6 +16,7 @@ import {QuestionNewComponent} from './question/question-new/question-new.compone
 import {StreamNewComponent} from './stream/stream-new/stream-new.component';
 import {SubjectNewComponent} from './subject/subject-new/subject-new.component';
 import {StudentComponent} from './student/student/student.component';
+import {CollegeDetailsComponent} from './college/college-details/college-details.component';
 
 import {SubjectDetailsComponent} from './subject/subject-details/subject-details.component'
 import { from } from 'rxjs';
@@ -26,12 +27,14 @@ const routes: Routes = [
   { path: 'university', component: UniversityListComponent},
   { path: 'newUniversity', component: UniversityNewComponent},
   { path: 'college', component: CollegeListComponent},
+  { path: 'CollegeDetail/:CollegeID', component: CollegeDetailsComponent},
   { path: 'newCollege', component: CollegeNewComponent},
   { path: 'stream', component: StreamComponent},
   { path: 'subject', component: SubjectComponent},
   { path: 'paper', component: PaperComponent},
   { path: 'ShowQuestions/:PaperID', component: QuestionListComponent},
   { path: 'newQuestion/:PaperID', component: QuestionNewComponent},
+  
   { path: 'newStream', component: StreamNewComponent},
   { path: 'newSubject', component: SubjectNewComponent},
   { path: 'SubjectDetails', component: SubjectDetailsComponent},

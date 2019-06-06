@@ -24,22 +24,14 @@ export class QuestionListComponent implements OnInit {
 
   questions:Question[] = [{
     QuestionID:0,
-    Question:' $sum_{i=1}^n(x_i^2 - \\overline{x}^2)$',
-    Solution:' $sum_{i=1}^n(x_i^2 - \\overline{x}^2)$',
+    Question:'$sum_{i=1}^n(x_i^2 - \\overline{x}^2)$',
+    Solution:'$sum_{i=1}^n(x_i^2 - \\overline{x}^2)$',
     DifficultyLevel:1,
     SubjectID:0,
     TopicID:0
   }];
 
-  
-   //equation: string = '\\sum_{i=1}^nx_i';
 
-   //answer:string = this._question.Solution;
-
-   /*paragraph: string = `You can write text, that contains expressions like this: $x ^ 2 + 5$ inside them. As you probably know.
-    You also can write expressions in display mode as follows: $sum_{i=1}^n(x_i^2 - \\overline{x}^2)$.
-    In first case you will need to use.
-  `;*/
 
    options: KatexOptions = {
     displayMode: true,
@@ -58,7 +50,6 @@ export class QuestionListComponent implements OnInit {
     this.GetQuestions(this.PaperID);
   }
 
- 
 
   GetQuestions(paperId:number):void{
     this.questionService.getQuestionsForPaper(paperId).subscribe(quest=>{

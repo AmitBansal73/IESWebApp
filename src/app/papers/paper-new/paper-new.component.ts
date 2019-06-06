@@ -43,13 +43,13 @@ export class PaperNewComponent implements OnInit {
   semesters:Semester[];
   selectedSemester : Semester;
 
-  newPaper:Paper = { PaperID :0, UniversityID :0, CollegeID: 0, StreamID:0, SubjectID:0, SemID:0, Year:0, Cost:10,
+  newPaper:Paper = { PaperID :0, UniversityID :0, CollegeID: 0, StreamID:0, SubjectID:0, SemID:0, Year:0, Cost:0,
     SubjectName: "" , CollegeName: "", UniversityName: "",  StreamName:"", SemesterName:"", PaidAmount: 100,
     PurchaseDate: "", UserID: 0 ,questioncount:0
    };
 
   year:number;
-
+  cost:number;
   constructor(
     private universityService: UniversityService,
     private collegeService: CollegeService,
@@ -119,7 +119,7 @@ export class PaperNewComponent implements OnInit {
     this.newPaper.SubjectID=this.selectedSubject.SubjectID;
     this.newPaper.SemID=this.selectedSubject.SubjectID;
     this.newPaper.Year = this.year;
-    this.newPaper.Cost=10;
+    this.newPaper.Cost=this.cost;
 
     this.paperService.addPaper(this.newPaper).subscribe(_paper=>
     {

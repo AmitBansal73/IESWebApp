@@ -27,7 +27,7 @@ export class UniversityService {
   encoded = encodeURI(this.UniversitysUrl);
 
   university:University={ UnivID: 0,
-    Name: "",
+    UniversityName: "",
     CollegeCount:0};
 
   constructor(private http: HttpClient) { }
@@ -37,13 +37,13 @@ export class UniversityService {
 
     return of([
       {UnivID:1,
-        Name:'CCS University',
+        UniversityName:'CCS University',
         CollegeCount:0},
         {UnivID:2,
-        Name: 'BR Ambedkar University',
+          UniversityName: 'BR Ambedkar University',
         CollegeCount:0},
         {UnivID:3,
-          Name: 'Banaras Hindu University',
+          UniversityName: 'Banaras Hindu University',
           CollegeCount:0}
     ]);
   }

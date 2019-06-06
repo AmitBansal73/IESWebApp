@@ -54,9 +54,10 @@
 
         <ul class="paper">
           <li *ngFor="let paper of papers  | paginate:{itemsPerPage:5 , currentPage: p }; index as i;" >
-              <span class="badge">{{paper.Year}}</span> {{paper.SubjectName}}, {{paper.StreamName}} 
+              <span class="badge">{{paper.Year}}</span><span >{{paper.SubjectName}}, {{paper.StreamName}} 
               {{paper.UniversityName}}, {{paper.CollegeName}}
               <button type="button" class="btn btn-sm tab" routerLink="/ShowQuestions/{{paper.PaperID}}" >Questions</button>
+              </span>
           </li>
         </ul>
         <div class="row">

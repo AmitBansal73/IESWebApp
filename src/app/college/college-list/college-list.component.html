@@ -20,7 +20,7 @@
         [class.selected]="college === selectedCollege"
         (click)="onSelect(college)">
 
-            <span class="badge">{{i+1}}</span> {{college.collegeName}},<a routerLink="/stream" class="tab"> Total {{college.StreamCount}} Streams</a> ,<span class="tab">Total 120 Students</span>
+            <span class="badge">{{i+1}}</span> {{college.CollegeName}},<a routerLink="/stream" class="tab"> Total {{college.StreamCount}} Streams</a> ,<span class="tab">Total {{college.StudentCount}} Students</span>
 
            <!--- <button class="delete" title="delete university"
             (click)="delete(college)">x</button>-->

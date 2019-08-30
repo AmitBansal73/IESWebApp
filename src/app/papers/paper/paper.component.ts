@@ -19,6 +19,7 @@ export class PaperComponent implements OnInit {
   SearchText:string;
   control:string;
   //searchtext:string;
+  Searchcollege:string;
 
   constructor(private paperService: PaperService) { 
 

@@ -12,6 +12,7 @@ import { SubjectService } from 'src/app/services/subject.service';
 export class SubjectComponent implements OnInit {
   p = 1;
   subjects:Subject[];
+  SearchText;
 
   constructor( private subjectService: SubjectService) { }
 

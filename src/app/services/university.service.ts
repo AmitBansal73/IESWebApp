@@ -26,6 +26,7 @@ export class UniversityService {
   
   encoded = encodeURI(this.UniversitysUrl);
 
+
   university:University={ UniversityID: 0,
     UniversityName: "",
     CollegeCount:0};

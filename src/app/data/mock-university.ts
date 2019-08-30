@@ -1,6 +1,6 @@
 import {University} from '../model/university'
 
-export const university : University[] = [{
+export const university : University[] = [{ 
 
   UniversityID:0,
   UniversityName: "",

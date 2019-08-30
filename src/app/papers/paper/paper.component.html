@@ -53,6 +53,7 @@
         </div>
 
         <ul class="paper">
+
           <li *ngFor="let paper of papers  | search:SearchText : control | paginate:{itemsPerPage:5 , currentPage: p }; index as i;" >
               <span class="badge">{{paper.Year}}</span> {{paper.SubjectName}}, {{paper.StreamName}} 
               {{paper.UniversityName}}, {{paper.CollegeName}}

@@ -7,6 +7,5 @@ export class College {
   Address:string;
   UniversityName:string;
   City:string;
-
   StudentCount:number;
   }

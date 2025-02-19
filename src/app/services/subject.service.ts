@@ -1,5 +1,5 @@
-import { Injectable } from '@angular/core';
-
+import { Injectable,inject } from '@angular/core';
+import { environment } from 'src/environments/environment';
 import { Subject } from '../model/subject';
 
 import {HttpClient ,HttpHeaders} from '@angular/common/http';
@@ -7,12 +7,9 @@ import { Observable } from 'rxjs/internal/Observable';
 import { of } from 'rxjs';
 import { tap, catchError } from 'rxjs/operators';
 
-import {CONSTANTS} from '../model/CONSTANTS';
-
 const  HttpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
 };
-
 
 @Injectable({
   providedIn: 'root'
@@ -20,15 +17,23 @@ const  HttpOptions = {
 
 export class SubjectService {
 
-  private subject_url= CONSTANTS.API_URL+ 'api/Subject/All';
-  private newSubject_url= CONSTANTS.API_URL+ 'api/Subject/New';
+  http = inject(HttpClient);
+  private subject_url= environment.apiUrl + 'api/Subject/All';
+  private newSubject_url= environment.apiUrl + 'api/Subject/New';
   
-  
-
-  constructor(private http:HttpClient) { }
+    //constructor(private http:HttpClient) { }
 
   public getSubject():Observable<Subject[]>{
-    return this.http.get<Subject[]>(this.subject_url);
+    //return this.http.get<Subject[]>(this.subject_url);
+    
+    return of([
+    {   SubjectID: 123,
+        SubjectName: "Quantum Physics",
+        Description: "Physics for BSC 1st year",
+        Unit: 1
+        }
+  
+      ]);
   }
 
   public addSubject(subject:Subject){

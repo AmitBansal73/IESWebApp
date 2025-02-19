@@ -1,12 +1,10 @@
-import { Injectable } from '@angular/core';
+import { Injectable,inject } from '@angular/core';
 import { Stream } from '../model/stream';
-
+import { environment } from 'src/environments/environment';
 import {HttpClient ,HttpHeaders} from '@angular/common/http';
 import { Observable } from 'rxjs/internal/Observable';
 import { of } from 'rxjs';
 import { tap, catchError } from 'rxjs/operators';
-
-import {CONSTANTS} from '../model/CONSTANTS';
 
 const  HttpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -18,14 +16,23 @@ const  HttpOptions = {
 
 export class StreamService {
   
-  private baseUrl= CONSTANTS.API_URL+ 'api/Stream/';
-  private streamurl= CONSTANTS.API_URL+ 'api/Stream/All';
-  private newstreamurl= CONSTANTS.API_URL+ 'api/Stream/New';
+  private baseUrl= environment.apiUrl + 'api/Stream/';
+  private streamurl= environment.apiUrl + 'api/Stream/All';
+  private newstreamurl= environment.apiUrl + 'api/Stream/New';
   encoded=encodeURI(this.streamurl); 
-  constructor(private http:HttpClient) { }
+  http = inject(HttpClient);
+  //constructor(private http:HttpClient) { }
 
   public getstream():Observable<Stream[]>{
-    return this.http.get<Stream[]>(this.streamurl);
+    //return this.http.get<Stream[]>(this.streamurl);
+    return of([
+    {   StreamID: 999,
+        StreamName: "civil",
+        CollegeCount: 5,
+        Description: "Civil Engineering"
+      }
+
+    ]);
   }
   
 

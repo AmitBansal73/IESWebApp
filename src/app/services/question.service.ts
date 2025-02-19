@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { environment } from "src/environments/environment";
 
 import{ Question } from '../model/question';
 import { Observable, of } from 'rxjs';
 import { tap, catchError } from 'rxjs/operators';
-import {CONSTANTS} from '../model/CONSTANTS';
 
 const  httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -15,22 +15,43 @@ const  httpOptions = {
   providedIn: 'root'
 })
 
-
 export class QuestionService {
 
-  private baseUrl= CONSTANTS.API_URL+ 'api/Question/';
-  private questionUrl= CONSTANTS.API_URL+ 'api/Question/All';
-  private newQuestionurl= CONSTANTS.API_URL+ 'api/Question/AddQuestion/';
+  private baseUrl= environment.apiUrl + 'api/Question/';
+  private questionUrl= environment.apiUrl + 'api/Question/All';
+  private newQuestionurl= environment.apiUrl + 'api/Question/AddQuestion/';
 
   constructor(private http:HttpClient) { }
 
   public getQuestion():Observable<Question[]>{
-    return this.http.get<Question[]>(this.questionUrl);
+   // return this.http.get<Question[]>(url: 'this.questionUrl');
+   return of([
+    { QuestionID:123,
+      Question:"What is a Quantum Theorem",
+      Solution: "This is test question Answer",
+      DifficultyLevel: 1,
+      SubjectID: 123,
+      TopicID:122
+    }
+
+  ]);
+   
   }
   
 
   public getQuestionsForPaper(paperId:number):Observable<Question[]>{
-    return this.http.get<Question[]>(this.baseUrl + paperId);
+    //return this.http.get<Question[]>(this.baseUrl + paperId);
+
+    return of([
+      { QuestionID:123,
+        Question:"What is a Quantum Theorem",
+        Solution: "This is test question Answer",
+        DifficultyLevel: 1,
+        SubjectID: 123,
+        TopicID:122
+      }
+  
+    ]);
   }
 
   

@@ -1,41 +1,32 @@
-import { Injectable } from '@angular/core';
+import { inject, Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-
-
 import{ University } from '../model/university';
 import { Observable, of } from 'rxjs';
-
 import { catchError, map, tap } from 'rxjs/operators';
-
-import {CONSTANTS} from '../model/CONSTANTS';
+import { environment } from 'src/environments/environment';
 
 const  httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
 };
-
 
 @Injectable({
   providedIn: 'root'
 })
 
 export class UniversityService {
-
-  private UniversitysUrl = CONSTANTS.API_URL+ 'api/university/All';
-
-  private addUrl = CONSTANTS.API_URL+ 'api/university/New';
+  http = inject(HttpClient);
+  private UniversitysUrl = environment.apiUrl + 'api/university/All';
+  private addUrl = environment.apiUrl + 'api/university/New';
   
   encoded = encodeURI(this.UniversitysUrl);
-
 
   university:University={ UniversityID: 0,
     UniversityName: "",
     CollegeCount:0};
-
-  constructor(private http: HttpClient) { }
+  //constructor(private http: HttpClient) { }
 
   public getTop4Universities(): Observable<University[]> {
     //return this.http.get<University[]>(this.UniversitysUrl);
-
     return of([
       {UniversityID:1,
         UniversityName:'CCS University',
@@ -50,20 +41,19 @@ export class UniversityService {
   }
 
   public getUniversities(): Observable<University[]> {
-    return this.http.get<University[]>(this.UniversitysUrl);
+    //return this.http.get<University[]>(this.UniversitysUrl);
 
-   /* return of([
-      {id:1,
-        name:'CCS University'},
-        {id:2,
-        name: 'BR Ambedkar University'},
-        {id:3,
-          name: 'Banaras Hindu University'},
-          {id:4,
-            name: 'University of Roorke'},
-            {id:5,
-              name: 'GB Pant University'}
-    ]);*/
+    return of([
+      {UniversityID:1,
+        UniversityName:'CCS University',
+        CollegeCount:0},
+        {UniversityID:2,
+          UniversityName: 'BR Ambedkar University',
+        CollegeCount:0},
+        {UniversityID:3,
+          UniversityName: 'Banaras Hindu University',
+          CollegeCount:0}
+    ]);
   }
 
   public deleteUniversity(univ: University){

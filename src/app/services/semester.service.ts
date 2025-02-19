@@ -1,12 +1,10 @@
-import { Injectable } from '@angular/core';
+import { Injectable,inject } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-
+import { environment } from 'src/environments/environment';
 
 import {Semester} from '../model/semester';
 import {Observable, of } from 'rxjs';
 import {tap, catchError } from 'rxjs/operators';
-
-import {CONSTANTS} from '../model/CONSTANTS';
 
 const  httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -18,12 +16,22 @@ const  httpOptions = {
 
 export class SemesterService {
 
-  private SemesterUrl = CONSTANTS.API_URL + 'api/Semester/All';
+  private SemesterUrl = environment.apiUrl + 'api/Semester/All';
   
-  constructor(private http: HttpClient) { }
+  http = inject(HttpClient);
+  //constructor(private http: HttpClient) { }
 
   public getSemester(): Observable<Semester[]> {
-    return this.http.get<Semester[]>(this.SemesterUrl);
+    //return this.http.get<Semester[]>(this.SemesterUrl);
+
+    return of([
+      { SemID:121,
+        SemesterName:"VI",
+        Semester:"3"
+      }
+  
+    ]);
+
    }
 
 }

@@ -1,5 +1,5 @@
 import { Pipe , PipeTransform } from '@angular/core';
-import { keys, numberFormat } from 'highcharts';
+import { numberFormat } from 'highcharts';
 
 @Pipe({ name: 'search' })
 

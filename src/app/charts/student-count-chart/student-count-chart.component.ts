@@ -1,10 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 
-import {Chart} from 'angular-highcharts'
+import {Chart, ChartModule} from 'angular-highcharts'
+import { NgxPaginationModule } from 'ngx-pagination';
 
 
 @Component({
   selector: 'app-student-count-chart',
+  imports: [NgxPaginationModule, ChartModule],
   templateUrl: './student-count-chart.component.html',
   styleUrls: ['./student-count-chart.component.css']
 })

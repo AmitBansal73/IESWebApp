@@ -1,11 +1,10 @@
-import { Injectable } from '@angular/core';
+import { inject, Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-
+import { environment } from "src/environments/environment";
 
 import{ College } from '../model/college';
 import { Observable, of } from 'rxjs';
 import { tap, catchError } from 'rxjs/operators';
-import {CONSTANTS} from '../model/CONSTANTS';
 import {College_Streams} from '../model/college_streams';
 import {iesCourse} from '../model/iesCourse';
 
@@ -19,15 +18,29 @@ const  httpOptions = {
 })
 
 export class CollegeService {
-  private baseUrl = CONSTANTS.API_URL + 'api/College/';
-  private CollegesUrl = CONSTANTS.API_URL + 'api/College/All';
-  private newcollegeurl = CONSTANTS.API_URL+ 'api/College/NewWithStream';
+  private baseUrl = environment.apiUrl + 'api/College/';
+  private CollegesUrl = environment.apiUrl + 'api/College/All';
+  private newcollegeurl = environment.apiUrl + 'api/College/NewWithStream';
+  http = inject(HttpClient);
 
-  constructor(private http: HttpClient) { }
+  //constructor(private http: HttpClient) { }
 
   
   public getCollege(): Observable<College[]> {
-    return this.http.get<College[]>(this.baseUrl + "All");
+    //return this.http.get<College[]>(this.baseUrl + "All");
+    return of([
+      {  CollegeID: 1,
+        CollegeName: "Test",
+        StreamCount:2,
+        StreamName:"test",
+        UnivID: 111,
+        Address:"test",
+        UniversityName:"test",
+        City:"LA",
+        StudentCount:100
+      }
+
+    ]);
    }
 
 

@@ -10,7 +10,7 @@ RUN rm -rf ./*
 COPY dist/IESWebApp/ ./
 
 # Copy custom Nginx config file (optional)
-COPY nginx.conf /etc/nginx/nginx.conf
+#COPY nginx.conf /etc/nginx/nginx.conf
 
 # Expose port 80
 EXPOSE 80

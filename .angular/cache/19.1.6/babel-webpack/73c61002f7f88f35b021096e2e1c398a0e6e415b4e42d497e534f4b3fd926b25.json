@@ -1,0 +1,1 @@
+{"ast":null,"code":"export let CONSTANTS = /*#__PURE__*/(() => {\n  class CONSTANTS {\n    //public static API_URL: string = 'http://localhost:61536/';\n    static {\n      this.API_URL = 'http://www.kevintech.in/IESMaster-Api/';\n    }\n  }\n  return CONSTANTS;\n})();","map":null,"metadata":{},"sourceType":"module","externalDependencies":[]}

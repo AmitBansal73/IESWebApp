@@ -1,0 +1,1 @@
+{"ast":null,"code":"export const confirmPasswordValidator = control => {\n  return control.value.password === control.value.confPassword ? null : {\n    PasswordNoMatch: true\n  };\n};","map":null,"metadata":{},"sourceType":"module","externalDependencies":[]}

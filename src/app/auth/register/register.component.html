@@ -1,0 +1,73 @@
+<div class="form">
+  <div class="form-title">
+    <span>Register Yourself</span>
+  </div>
+  <form class="" [formGroup]='reactiveRegisterForm'>
+    <fieldset class="form-body">
+      <div class="form-row">
+        <div class="form-group form-element">
+          <label for="name">Name</label>
+          <input name="name" [(ngModel)]="registerUserData.name" id="name" class="form-control"
+            placeholder="Write Your Name" formControlName="name" />
+          @if( reactiveRegisterForm.get('name').touched && reactiveRegisterForm.get('name').invalid){
+          <small>Name is required</small>
+          }
+        </div>
+        <div class="form-group form-element">
+          <label for="email">Email</label>
+          <input name="email" [(ngModel)]="registerUserData.email" id="email" class="form-control"
+            placeholder="Write Your Email" formControlName="email" />
+          @if( reactiveRegisterForm.get('email').touched && reactiveRegisterForm.get('email').invalid){
+          <small>Valid email is required</small>
+          }
+        </div>
+      </div>
+      <div class="form-row"  [formGroup]='passwordForm'>
+        <div class="form-group form-element">
+          <label for="password">Password</label>
+          <input name="password" [(ngModel)]="registerUserData.password" id="password" type="password"
+            class="form-control" placeholder="Write Password" formControlName="password" />
+            @if( passwordForm.get('password').touched && passwordForm.get('password').invalid){
+              <small>Required Field</small>
+              }
+        </div>
+
+        <div class="form-group form-element">
+          <label for="confPassword">Confirm Password</label>
+          <input name="confPassword" [(ngModel)]="registerUserData.confPassword" id="confPassword" class="form-control"
+            placeholder="Confirm Password" formControlName="confPassword" />
+            @if( passwordForm.get('confPassword').touched && passwordForm.get('confPassword').invalid 
+            && passwordForm.get('confPassword').errors?.['required']){
+              <small>Required Field</small>
+              }
+            @else if(passwordForm.errors?.['PasswordNoMatch']){
+              <small>Password doesn't match</small>
+              } 
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group form-element">
+          <label for="mobileNumber">MobileNumber </label>
+          <input name="mobileNumber" [(ngModel)]="registerUserData.mobileNumber" id="MobileNumber" class="form-control"
+            placeholder="xxxx111" formControlName="mobileNumber" />
+          @if( reactiveRegisterForm.get('mobileNumber').touched && reactiveRegisterForm.get('mobileNumber').invalid){
+          <small>Mobile doesn't match</small>
+          }
+        </div>
+       <div class="form-group form-element">
+          <label for="dob">Date Of Birth </label>
+          <input type="date" name="dob" [(ngModel)]="registerUserData.dob" id="dob" class="form-control"
+          min="2000-01-01" max="2006-12-31" formControlName="dob" />
+          <!-- @if( reactiveRegisterForm.get('dob').touched && reactiveRegisterForm.get('dob').invalid){
+          <small></small>
+          } -->
+        </div> 
+      </div>
+      <div class="button-row">
+
+        <button type="button" class="btn btn-primary" (click)="RegisterUser()">Register</button>
+      </div>
+    </fieldset>
+  </form>
+
+</div>

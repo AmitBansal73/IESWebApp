@@ -1,0 +1,30 @@
+.NewForm{
+    width: 80%;
+    margin: auto;
+    background-color: #e9e9e9;
+    padding: 25px;
+}
+
+h4
+{
+    margin-bottom: .5em;
+}
+
+.form-style
+{
+    border:2px inset rgb(97, 124, 211);
+    padding: 2em;
+    border-radius: 10px;
+    width: 30em;
+    margin-bottom: 10px;
+}
+
+button
+{
+    margin-right: .5em;
+}
+
+#collegestream
+{
+    margin-bottom: 1em;
+}

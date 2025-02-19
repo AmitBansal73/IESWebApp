@@ -1,0 +1,22 @@
+<header>
+    <nav>
+        <span routerLink="/" >IES Web App</span>
+        @if(userService.loggedIn()){
+        <ul>
+            <li routerLink="/">Dashboard</li>
+            <li routerLink="/university">Universities</li>
+            <li routerLink="/college">Colleges</li>
+            <li routerLink="/stream">Stream</li>
+            <li routerLink="/subject">Subject</li>
+            <li routerLink="/paper">Papers</li>
+            <a (click)="logout()">logout</a>
+        </ul>
+        }
+        @else{
+            <ul>
+                <li routerLink="/login">Login</li>
+                <li routerLink="/register">Register</li>
+            </ul>
+        }
+    </nav>
+</header>

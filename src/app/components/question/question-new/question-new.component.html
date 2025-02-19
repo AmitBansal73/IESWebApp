@@ -1,0 +1,44 @@
+<p>
+    Add New Question
+  </p>
+  <div *ngIf='paper'  class="NewForm">
+
+    <h3>{{paper.SubjectName}}, {{paper.Unit}}</h3>
+    <h3> {{paper.Year}}</h3>
+   
+  <form>
+ 
+   <!--<div class="form-group">
+     <label  for="subjectName">Select Subject</label>
+     <input id="subjectName" class="form-control" placeholder="Subject Name"/>
+   </div>-->
+
+   <div class="form-group">
+      <label for="QuestionName">Write question</label>
+    <textarea id="QuestionName" name="question" [(ngModel)]="newQuestion.Question" class="form-control question-area" 
+    placeholder="Question"></textarea>
+  </div>
+
+ <!-- <div class="form-group">
+      <label for="QuestionUrl">write question url</label>
+    <input id="QuestionUrl" class="form-control" placeholder="Question url"/>
+  </div>-->
+
+
+  <div class="form-group">
+      <label for="AnswerName">Write Answer</label>
+    <textarea id="AnswerName" name="solution" [(ngModel)]="newQuestion.Solution" class="form-control question-area" 
+    placeholder="Semester"></textarea>
+  </div>
+
+  <div class="form-group">
+      <label for="DifficultyLevel">Write Difficulty Level</label>
+    <input id="DifficultyLevel" name="level" [(ngModel)]="newQuestion.DifficultyLevel" class="form-control" 
+    placeholder="Difficulty"/>
+  </div>
+
+  <button type="button" class="btn btn-primary" (click)="Cancel()" >Cancel</button>
+  <button type="button" class="btn btn-primary" (click)="Submit()" >Submit</button>
+  </form>
+
+  </div>

@@ -1,0 +1,42 @@
+pipeline{
+    agent any
+    stage ('Clean workspace') {
+        steps {
+            cleanWs()
+        }
+}
+    stages{
+
+        stage('Git Checkout'){
+            steps{
+                 git credentialsId: 'GitHubCredential', url: 'https://github.com/AmitBansal73/IESWebApp/AuthServerApi'
+            }
+        }
+    
+
+        stage ('npm installation')
+        {
+            steps{
+                bat 'npm install'
+            }
+        }
+        
+        stage ('building application')
+        {
+            steps{
+                bat 'ng build --configuration production'
+            }
+        }
+        stage ('building docker image'){
+            steps{
+                bat 'docker build -t ies-web-app:jenkins .'
+            }
+        }
+        
+        stage ("deploying om container"){
+            steps{
+                bat 'docker run -d -p 7070:80 ies-web-app:jenkins'
+            }
+        }
+    }
+}

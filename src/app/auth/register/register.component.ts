@@ -43,8 +43,8 @@ export class RegisterComponent implements OnInit {
  
   RegisterUser(){
     //console.log(this.reactiveRegisterForm);
-    //console.log(this.passwordForm);
-    this.userService.Login(this.registerUserData)
+    //console.log(this.registerUserData);
+    this.userService.Register(this.registerUserData)
     .subscribe(user=> {
       //console.log(JSON.stringify(_college));
       localStorage.setItem('Token', user.token);

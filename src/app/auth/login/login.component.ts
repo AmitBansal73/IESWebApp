@@ -33,8 +33,8 @@ export class LoginComponent implements OnInit {
     this.userService.Login(this.loginUserData)
     .subscribe(user=> {
       //console.log(JSON.stringify(user));
-      localStorage.setItem('Token', user.Token);
-      localStorage.setItem('user', user);
+      localStorage.setItem('Token', user.authToken);
+      localStorage.setItem('RefreshToken', user.refreshToken);
       this.userInformation = user;
       this._router.navigate(['./dashboard'])
 

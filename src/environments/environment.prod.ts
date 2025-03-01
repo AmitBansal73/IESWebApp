@@ -1,4 +1,5 @@
 export const environment = {
   production: true,
-  apiUrl: 'www.prod.localhost:112/'
+  apiUrl: 'http://localhost:51234/',
+  authenticationUrl:"http://localhost:51234/"
 };

@@ -21,10 +21,14 @@ export class HeaderComponent implements OnDestroy {
   isLoggedIn:boolean = localStorage.getItem('Token') === null? true: false; 
 
   logout(){
+    this.userService.LogOut()
+    .subscribe( response => {
     localStorage.removeItem('Token');
     localStorage.removeItem('user');
     alert('logged out');
     this._router.navigate(['./login']);
+    },
+    err => {})
   }
 }
 

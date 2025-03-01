@@ -17,9 +17,8 @@ const  httpOptions = {
 export class UserService {
 
   http = inject(HttpClient )
-    private RegistrationUrl = environment.apiUrl + 'api/user/Register';
-  
-    private loginUrl = environment.apiUrl + 'api/user/Login';
+    private RegistrationUrl = environment.authenticationUrl + 'api/Authentication/Register';
+    private loginUrl = environment.authenticationUrl + 'api/Authentication/Login';
     
     encoded = encodeURI(this.RegistrationUrl);
 
@@ -27,27 +26,42 @@ export class UserService {
 
 
     public Register(user: User): Observable<any>{
-      //return this.http.post<any>(this.RegistrationUrl, JSON.stringify(user), httpOptions)
-      return of({
+      return this.http.post<any>(this.RegistrationUrl, JSON.stringify(user), httpOptions)
+/*       return of({
         Name: "Amit",
         email: "amit.bansal1973@gmail.com",
         MobileNumber: "112223332",
         Password: "Test@123",
         Token: "TXTWEE"
-      });
+      }); */
       ;
     }
 
     public Login(user: User): Observable<any>{
-      //return this.http.post<any>(this.RegistrationUrl, JSON.stringify(user), httpOptions)
+      return this.http.post<any>(`${environment.authenticationUrl}api/Authentication/Login`,
+         JSON.stringify(user), httpOptions)
 
-      return of({
+/*       return of({
         Name: "Amit",
         email: "amit.bansal1973@gmail.com",
         MobileNumber: "112223332",
         Password: "Test@123",
         Token: "TXTWEE"
-      });
+      }); */
+      
+    }
+
+    public LogOut(){
+      return this.http.delete<any>(`${environment.authenticationUrl}api/Authentication/LogOut`, httpOptions);
+
+
+/*       return of({
+        Name: "Amit",
+        email: "amit.bansal1973@gmail.com",
+        MobileNumber: "112223332",
+        Password: "Test@123",
+        Token: "TXTWEE"
+      }); */
       
     }
 
